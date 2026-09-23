@@ -1,0 +1,21 @@
+{
+  "hosting": {
+    "site": "ruta-travel-oficial",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      ".git/**",
+      "**/node_modules/**",
+      "*.py",
+      "download_ruta_hd.js",
+      "extract_*.js",
+      "scrape_*.js",
+      "trends_*.js",
+      "test_*.js",
+      "verify_*.js",
+      "inspect_*.js",
+      "*.md"
+    ]
+  }
+}
