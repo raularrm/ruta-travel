@@ -3423,13 +3423,13 @@
         const x = e.touches ? e.touches[0].clientX : e.clientX;
         const now = performance.now();
         const dt = Math.max(now - this.lastTime, 8);
-        const dx = this.lastPointerX - x;
+        const dx = x - this.lastPointerX;
 
-        // Smooth physical displacement
-        const distance = (this.start - x) * (this.scrollSpeed * 0.02);
+        // Smooth physical displacement (inverted so dragging right rotates right, and left rotates left)
+        const distance = (x - this.start) * (this.scrollSpeed * 0.02);
         this.scroll.target = this.scroll.position + distance;
 
-        // Continuous velocity tracking (pixels per frame normalized)
+        // Continuous velocity tracking matching user gesture direction
         const instantVelocity = (dx / dt) * 16 * (this.scrollSpeed * 0.018);
         this.velocity = this.velocity * 0.35 + instantVelocity * 0.65;
 
@@ -3505,7 +3505,7 @@
       }
       onWheel(e) {
         const delta = e.deltaY || e.wheelDelta || e.detail;
-        const wheelForce = (delta > 0 ? 1 : -1) * Math.min(Math.abs(delta) * 0.0016, 0.35);
+        const wheelForce = (delta > 0 ? -1 : 1) * Math.min(Math.abs(delta) * 0.0016, 0.35);
         this.momentum += wheelForce;
         this.momentum = Math.max(Math.min(this.momentum, 0.8), -0.8);
       }
