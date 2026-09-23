@@ -1,0 +1,3438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Ruta Travel — Agencia de Viajes Oficial | Tenango del Valle, Toluca & Metepec</title>
+  <meta name="description" content="Ruta Travel: Agencia de viajes oficial en Tenango del Valle y Valle de Toluca. Paquetes a Cancún, Los Cabos, Ruta del Tequila, Pueblos Mágicos y Teotihuacán. 100% recomendados." />
+
+  <!-- Fonts: Plus Jakarta Sans + Outfit for ultra-vivid modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       VIVID RUTA TRAVEL DESIGN SYSTEM
+       Mobile First & Pixel Perfect Responsive Architecture
+       Zero Horizontal Overflow
+       ========================================================================== */
+    :root {
+      --color-red: #FF002B;
+      --color-red-glow: rgba(255, 0, 43, 0.4);
+      --color-red-dark: #D60022;
+      --color-red-light: #FFF0F2;
+
+      --color-blue: #0062FF;
+      --color-blue-glow: rgba(0, 98, 255, 0.4);
+      --color-blue-dark: #0046B8;
+      --color-blue-deep: #051937;
+      --color-blue-light: #EBF3FF;
+
+      --color-cyan: #00D2FF;
+      --color-gold: #FFB800;
+      --color-emerald: #00D06C;
+
+      --color-canvas: #FAFBFD;
+      --color-white: #FFFFFF;
+      --color-text-main: #0B192C;
+      --color-text-muted: #475569;
+      --color-border: rgba(0, 98, 255, 0.12);
+
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 4px 12px rgba(0, 40, 100, 0.05);
+      --shadow-md: 0 10px 30px rgba(0, 40, 100, 0.08);
+      --shadow-lg: 0 20px 45px rgba(0, 40, 100, 0.12);
+      --shadow-vivid-red: 0 10px 25px rgba(255, 0, 43, 0.35);
+      --shadow-vivid-blue: 0 10px 25px rgba(0, 98, 255, 0.35);
+    }
+
+    /* Prevent horizontal scrolling on smartphones and iPhones */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-canvas);
+      color: var(--color-text-main);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin-inline: auto;
+      padding-inline: 20px;
+    }
+
+    /* ==========================================================================
+       TOP ANNOUNCEMENT BAR (Responsive wrap on mobile)
+       ========================================================================== */
+    .top-bar {
+      background: linear-gradient(90deg, #D60022 0%, #FF002B 50%, #0062FF 100%);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 8px 14px;
+      text-align: center;
+      letter-spacing: 0.2px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      z-index: 102;
+    }
+    .top-bar .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #00FF88;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00FF88;
+      display: inline-block;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION
+       "quita El botón de WhatsApp de la barra superior, acomoda bien los espacios
+        y que el botón de 'Reserva tu viaje' los lleve directo al formulario."
+       ========================================================================== */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1.5px solid rgba(0, 98, 255, 0.12);
+      box-shadow: 0 4px 20px rgba(0, 50, 150, 0.05);
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    .site-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .brand-logo-img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 98, 255, 0.18);
+      border: 1px solid rgba(0, 98, 255, 0.15);
+      background: #fff;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--color-red) 35%, var(--color-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-sub {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      margin-top: 3px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-link {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--color-text-main);
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    .nav-link:hover {
+      color: var(--color-blue);
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--color-red);
+      transition: width 0.25s ease;
+      border-radius: 2px;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .btn-nav-reserve {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--color-red) 0%, #FF264B 100%);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 11px 22px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-vivid-red);
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-nav-reserve:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(255, 0, 43, 0.55);
+      background: linear-gradient(135deg, #E60026 0%, #FF1A40 100%);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-blue);
+      padding: 6px;
+    }
+
+    /* Mobile Dropdown Menu */
+    .mobile-dropdown-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 76px;
+      left: 0;
+      width: 100%;
+      background: #FFFFFF;
+      box-shadow: 0 15px 35px rgba(0, 50, 150, 0.12);
+      border-bottom: 2px solid var(--color-blue);
+      padding: 16px 24px;
+      z-index: 99;
+      gap: 14px;
+    }
+    .mobile-dropdown-menu.active {
+      display: flex;
+    }
+    .mobile-dropdown-menu a {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-main);
+      padding-block: 8px;
+      border-bottom: 1px solid rgba(0, 98, 255, 0.08);
+    }
+    .mobile-dropdown-menu a:hover {
+      color: var(--color-blue);
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding: 40px 0 60px;
+      background: radial-gradient(circle at 85% 20%, rgba(0, 98, 255, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 15% 80%, rgba(255, 0, 43, 0.06) 0%, transparent 50%),
+                  var(--color-canvas);
+      overflow: hidden;
+      width: 100%;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-badge-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #FFFFFF;
+      border: 1.5px solid rgba(0, 98, 255, 0.2);
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 18px;
+    }
+    .hero-badge-stars {
+      color: var(--color-gold);
+      font-size: 13.5px;
+      letter-spacing: 1px;
+    }
+    .hero-badge-text {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--color-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4.8vw, 62px);
+      font-weight: 900;
+      line-height: 1.06;
+      letter-spacing: -1.2px;
+      color: var(--color-text-main);
+      margin-bottom: 16px;
+    }
+    .hero-title .glow-red {
+      color: var(--color-red);
+      text-shadow: 0 4px 20px var(--color-red-glow);
+    }
+    .hero-title .glow-blue {
+      color: var(--color-blue);
+      text-shadow: 0 4px 20px var(--color-blue-glow);
+    }
+
+    .hero-description {
+      font-size: clamp(15.5px, 1.8vw, 17.5px);
+      line-height: 1.6;
+      color: var(--color-text-muted);
+      margin-bottom: 26px;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+    .btn-hero-reserve {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--color-red) 0%, #FF264B 100%);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15.5px;
+      padding: 15px 30px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-vivid-red);
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .btn-hero-reserve:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(255, 0, 43, 0.55);
+    }
+    .btn-hero-destinations {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 2px solid var(--color-blue);
+      color: var(--color-blue);
+      font-weight: 800;
+      font-size: 15.5px;
+      padding: 13px 26px;
+      border-radius: var(--radius-full);
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .btn-hero-destinations:hover {
+      background: var(--color-blue);
+      color: #FFFFFF;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-vivid-blue);
+    }
+
+    .hero-quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+      padding-top: 4px;
+    }
+    .chip-label {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-right: 4px;
+    }
+    .chip-pill {
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 98, 255, 0.15);
+      border-radius: var(--radius-full);
+      color: var(--color-blue-dark);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .chip-pill:hover {
+      background: var(--color-blue);
+      color: #fff;
+      border-color: var(--color-blue);
+      transform: translateY(-1px);
+    }
+
+    /* Hero media side: Banner Oficial + Tarjeta de Salida Activa */
+    .hero-media-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+    }
+    .hero-banner-container {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 15px 45px rgba(0, 50, 150, 0.14);
+      border: 2px solid rgba(0, 98, 255, 0.18);
+      background: #FFFFFF;
+      cursor: zoom-in;
+      width: 100%;
+    }
+    .hero-official-banner {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 960 / 400;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .hero-official-banner:hover {
+      transform: scale(1.02);
+    }
+
+    .hero-departure-card {
+      background: #FFFFFF;
+      border: 1.5px solid rgba(0, 98, 255, 0.15);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      width: 100%;
+    }
+    .dep-info-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .dep-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--color-blue) 0%, #0099FF 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-vivid-blue);
+    }
+    .dep-title {
+      font-family: var(--font-display);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--color-text-main);
+    }
+    .dep-sub {
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+    .btn-dep-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-red);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-vivid-red);
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .btn-dep-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 0, 43, 0.45);
+    }
+
+    /* ==========================================================================
+       PUNTOS DE SALIDA: ENCABEZADO CENTRADO ARRIBA + DESFILE LENTO SIN COLISIONES
+       ========================================================================== */
+    .marquee-section {
+      background: linear-gradient(90deg, #051937 0%, #0046B8 50%, #051937 100%);
+      padding: 30px 0 22px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+      width: 100%;
+    }
+    .marquee-top-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .marquee-top-badge {
+      display: inline-block;
+      background: var(--color-red);
+      color: #fff;
+      font-weight: 900;
+      font-size: 11.5px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 0 20px var(--color-red-glow);
+      margin-bottom: 5px;
+    }
+    .marquee-top-sub {
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.75);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeParade 65s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    @keyframes marqueeParade {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 22px;
+      margin-right: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-full);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .marquee-item:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: scale(1.02);
+    }
+    .marquee-item .pin-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #00FFCC;
+      box-shadow: 0 0 10px #00FFCC;
+    }
+    .marquee-item.highlight .pin-dot {
+      background: #FF002B;
+      box-shadow: 0 0 10px #FF002B;
+    }
+    .marquee-item.highlight {
+      background: rgba(255, 0, 43, 0.2);
+      border-color: rgba(255, 0, 43, 0.4);
+    }
+
+    /* ==========================================================================
+       SECTION HEADERS
+       ========================================================================== */
+    .section-header-box {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 42px;
+      padding-inline: 10px;
+    }
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-red);
+      background: var(--color-red-light);
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 0, 43, 0.15);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.8vw, 44px);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      color: var(--color-text-main);
+      margin-bottom: 12px;
+    }
+    .section-title span.blue { color: var(--color-blue); }
+    .section-title span.red { color: var(--color-red); }
+    .section-lead {
+      font-size: clamp(14.5px, 1.8vw, 16.5px);
+      line-height: 1.6;
+      color: var(--color-text-muted);
+    }
+
+    /* ==========================================================================
+       DESTINOS SECTION (High-Res Images with Fullscreen & Zoom on click)
+       ========================================================================== */
+    .destinations-section {
+      padding: 75px 0;
+      background: #FFFFFF;
+      width: 100%;
+    }
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+    }
+    .destination-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1.5px solid rgba(0, 98, 255, 0.12);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+    }
+    .destination-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(0, 70, 180, 0.14);
+      border-color: var(--color-blue);
+    }
+
+    .dest-card-image-box {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: #000;
+    }
+    .dest-card-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .destination-card:hover .dest-card-image-box img {
+      transform: scale(1.08);
+    }
+
+    .dest-badge-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(11, 25, 44, 0.85);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 2;
+    }
+    .dest-badge-price {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, var(--color-red) 0%, #FF264B 100%);
+      color: #fff;
+      font-weight: 800;
+      font-size: 12.5px;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 15px rgba(255, 0, 43, 0.4);
+      z-index: 2;
+    }
+    .zoom-hint-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--color-text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.25s ease;
+      z-index: 3;
+    }
+    .dest-card-image-box:hover .zoom-hint-btn {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .dest-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .dest-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 7px;
+    }
+    .dest-desc {
+      font-size: 13.5px;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+    .dest-perks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .dest-perk-item {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--color-blue);
+      background: var(--color-blue-light);
+      padding: 4px 9px;
+      border-radius: var(--radius-full);
+    }
+    .dest-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid rgba(0, 98, 255, 0.1);
+    }
+    .dest-booking-prompt {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--color-emerald);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .btn-dest-cotizar {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-blue);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 7px 15px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 12px rgba(0, 98, 255, 0.25);
+      transition: all 0.2s ease;
+    }
+    .btn-dest-cotizar:hover {
+      background: var(--color-red);
+      box-shadow: 0 6px 18px rgba(255, 0, 43, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .destination-card.featured-card {
+      grid-column: span 2;
+    }
+    .destination-card.featured-card .dest-card-image-box {
+      height: 280px;
+    }
+
+    /* ==========================================================================
+       CIRCULAR GALLERY (React Bits Component with OGL WebGL)
+       Auto-rotates VERY slowly (speed 0.018 - "demasiado lento")
+       Exact Photo Click Raycasting Test
+       NO logo in the gallery
+       ========================================================================== */
+    .gallery-section {
+      padding: 75px 0;
+      background: radial-gradient(circle at 50% 50%, #0A192F 0%, #051124 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    .gallery-section .section-title { color: #FFFFFF; }
+    .gallery-section .section-lead { color: rgba(255, 255, 255, 0.75); }
+
+    .circular-gallery-wrapper {
+      position: relative;
+      width: 100%;
+      height: 540px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      margin-top: 14px;
+      cursor: grab;
+    }
+    .circular-gallery-wrapper:active { cursor: grabbing; }
+    .circular-gallery-canvas-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .gallery-overlay-hint {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 7px 18px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      z-index: 10;
+      white-space: nowrap;
+      max-width: 90%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    /* Thumbnail Strip: 100% genuine Ruta Travel HD photos */
+    .gallery-strip-container {
+      margin-top: 28px;
+      width: 100%;
+    }
+    .gallery-strip-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--color-cyan);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .gallery-thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      width: 100%;
+    }
+    .gallery-thumb-item {
+      position: relative;
+      height: 110px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #000;
+    }
+    .gallery-thumb-item:hover {
+      transform: translateY(-4px) scale(1.03);
+      border-color: var(--color-red);
+      box-shadow: 0 8px 25px rgba(255, 0, 43, 0.4);
+    }
+    .gallery-thumb-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gallery-thumb-caption {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-align: center;
+      padding: 6px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .gallery-thumb-item:hover .gallery-thumb-caption {
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       FULLSCREEN LIGHTBOX MODAL WITH ZOOM & PAN
+       Pauses both Marquee and Circular Gallery when open
+       ========================================================================== */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 10, 22, 0.96);
+      backdrop-filter: blur(20px);
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      width: 100vw;
+      height: 100vh;
+    }
+    .lightbox-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+    .lightbox-toolbar {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 10;
+    }
+    .lightbox-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 17px;
+      transition: all 0.2s ease;
+    }
+    .lightbox-btn:hover {
+      background: var(--color-red);
+      border-color: var(--color-red);
+      transform: scale(1.1);
+    }
+    .lightbox-caption-bar {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      max-width: 90%;
+      z-index: 10;
+    }
+    .lightbox-stage {
+      position: relative;
+      width: 92vw;
+      height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: grab;
+    }
+    .lightbox-stage:active { cursor: grabbing; }
+    .lightbox-stage img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+      transform-origin: center center;
+    }
+
+    /* ==========================================================================
+       SERVICIOS & CÓMO FUNCIONA
+       ========================================================================== */
+    .services-section {
+      padding: 75px 0;
+      background: var(--color-canvas);
+      width: 100%;
+    }
+    .services-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 45px;
+      width: 100%;
+    }
+    .service-box-premium {
+      background: #FFFFFF;
+      padding: 28px 22px;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid rgba(0, 98, 255, 0.1);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+    .service-box-premium:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-blue);
+    }
+    .service-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .service-icon-wrap.red {
+      background: linear-gradient(135deg, #FFF0F2 0%, #FFE0E4 100%);
+      color: var(--color-red);
+    }
+    .service-icon-wrap.blue {
+      background: linear-gradient(135deg, #EBF3FF 0%, #D6E7FF 100%);
+      color: var(--color-blue);
+    }
+    .service-icon-wrap.green {
+      background: linear-gradient(135deg, #E6FBF0 0%, #C7F7DC 100%);
+      color: var(--color-emerald);
+    }
+    .service-icon-wrap.cyan {
+      background: linear-gradient(135deg, #E6FAFF 0%, #C7F4FF 100%);
+      color: #00A3C4;
+    }
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--color-text-main);
+    }
+    .service-text {
+      font-size: 13.5px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .steps-banner {
+      background: linear-gradient(135deg, var(--color-blue) 0%, #0046B8 100%);
+      border-radius: var(--radius-lg);
+      padding: 38px 28px;
+      color: #fff;
+      box-shadow: var(--shadow-vivid-blue);
+      width: 100%;
+    }
+    .steps-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3.2vw, 28px);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      width: 100%;
+    }
+    .step-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--color-red);
+      color: #fff;
+      font-weight: 900;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      box-shadow: 0 4px 15px rgba(255, 0, 43, 0.5);
+    }
+    .step-card-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+    .step-card-text {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       PRUEBA SOCIAL & RESEÑAS VERIFICADAS DE FACEBOOK
+       ========================================================================== */
+    .reviews-section {
+      padding: 75px 0;
+      background: #FFFFFF;
+      width: 100%;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+    }
+    .review-card-modern {
+      background: var(--color-canvas);
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      border: 1.5px solid rgba(0, 98, 255, 0.12);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    .review-card-modern:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-blue);
+    }
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .review-avatar-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-red) 100%);
+      color: #fff;
+      font-weight: 800;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 98, 255, 0.2);
+    }
+    .review-author-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--color-text-main);
+    }
+    .review-meta {
+      font-size: 11.5px;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .fb-badge-verified {
+      color: #1877F2;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .review-stars {
+      color: var(--color-gold);
+      font-size: 14.5px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    .review-quote {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--color-text-main);
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .review-tag-dest {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--color-blue);
+      background: var(--color-blue-light);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      align-self: flex-start;
+    }
+
+    /* ==========================================================================
+       FAQ ACCORDION
+       ========================================================================== */
+    .faq-section {
+      padding: 75px 0;
+      background: var(--color-canvas);
+      width: 100%;
+    }
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .faq-item {
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      border: 1.5px solid rgba(0, 98, 255, 0.1);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+    .faq-item:hover { border-color: var(--color-blue); }
+    .faq-question {
+      padding: 18px 22px;
+      font-family: var(--font-display);
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--color-text-main);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      gap: 10px;
+    }
+    .faq-toggle-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--color-blue-light);
+      color: var(--color-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+      background: var(--color-red);
+      color: #fff;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 22px;
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--color-text-muted);
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+
+    /* ==========================================================================
+       CONTACT & OFFICIAL APPLICATION ICONS
+       DIRECT CLICK TO DESTINATIONS + PHOSPHORESCENT INTENSE NEON GLOW ON HOVER
+       FORM WITH TRIP DATE INCLUDED
+       ========================================================================== */
+    .contact-section {
+      padding: 75px 0;
+      background: #FFFFFF;
+      scroll-margin-top: 80px;
+      width: 100%;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: stretch;
+      width: 100%;
+    }
+    .contact-info-card {
+      background: linear-gradient(135deg, #051937 0%, #0046B8 100%);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 38px 30px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .contact-info-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.2vw, 30px);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .contact-info-lead {
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 26px;
+      line-height: 1.5;
+    }
+    .contact-channels-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 26px;
+      width: 100%;
+    }
+
+    /* Interactive clickable channel row with phosphorescent glow */
+    .contact-channel-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(255, 255, 255, 0.14);
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      cursor: pointer;
+      width: 100%;
+    }
+    .channel-left-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .official-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+    }
+    .official-icon-box.whatsapp { background: #25D366; }
+    .official-icon-box.facebook { background: #1877F2; }
+    .official-icon-box.maps { background: #FFFFFF; }
+    .official-icon-box.hours { background: var(--color-red); }
+
+    .channel-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--color-cyan);
+      margin-bottom: 2px;
+      transition: color 0.3s ease;
+    }
+    .channel-value {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+    .channel-arrow-prompt {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+    }
+
+    /* Phosphorescent Neon Glow on Hover */
+    .contact-channel-link.wa-link:hover {
+      background: rgba(37, 211, 102, 0.16);
+      border-color: #00FF66;
+      box-shadow: 0 0 30px rgba(0, 255, 102, 0.65), inset 0 0 15px rgba(0, 255, 102, 0.2);
+      transform: translateX(6px) scale(1.02);
+    }
+    .contact-channel-link.wa-link:hover .official-icon-box {
+      box-shadow: 0 0 25px #00FF66, 0 0 10px #25D366;
+      filter: brightness(1.25);
+    }
+    .contact-channel-link.wa-link:hover .channel-label { color: #00FF88; }
+    .contact-channel-link.wa-link:hover .channel-arrow-prompt { color: #00FF88; }
+
+    .contact-channel-link.fb-link:hover {
+      background: rgba(24, 119, 242, 0.2);
+      border-color: #00A6FF;
+      box-shadow: 0 0 30px rgba(0, 166, 255, 0.65), inset 0 0 15px rgba(0, 166, 255, 0.2);
+      transform: translateX(6px) scale(1.02);
+    }
+    .contact-channel-link.fb-link:hover .official-icon-box {
+      box-shadow: 0 0 25px #00A6FF, 0 0 10px #1877F2;
+      filter: brightness(1.25);
+    }
+    .contact-channel-link.fb-link:hover .channel-label { color: #00D2FF; }
+    .contact-channel-link.fb-link:hover .channel-arrow-prompt { color: #00D2FF; }
+
+    .contact-channel-link.maps-link:hover {
+      background: rgba(66, 133, 244, 0.18);
+      border-color: #4285F4;
+      box-shadow: 0 0 30px rgba(66, 133, 244, 0.65), inset 0 0 15px rgba(66, 133, 244, 0.2);
+      transform: translateX(6px) scale(1.02);
+    }
+    .contact-channel-link.maps-link:hover .official-icon-box {
+      box-shadow: 0 0 25px #4285F4, 0 0 10px #34A853;
+      filter: brightness(1.15);
+    }
+    .contact-channel-link.maps-link:hover .channel-label { color: #FFB800; }
+    .contact-channel-link.maps-link:hover .channel-arrow-prompt { color: #FFB800; }
+
+    .contact-channel-link.hours-link:hover {
+      background: rgba(255, 0, 43, 0.16);
+      border-color: #FF002B;
+      box-shadow: 0 0 30px rgba(255, 0, 43, 0.65), inset 0 0 15px rgba(255, 0, 43, 0.2);
+      transform: translateX(6px) scale(1.02);
+    }
+    .contact-channel-link.hours-link:hover .official-icon-box {
+      box-shadow: 0 0 25px #FF002B;
+      filter: brightness(1.25);
+    }
+    .contact-channel-link.hours-link:hover .channel-label { color: #FF334B; }
+    .contact-channel-link.hours-link:hover .channel-arrow-prompt { color: #FF334B; }
+
+    /* Right Card: Interactive Booking & Quote Form with Trip Date */
+    .quote-form-card {
+      background: var(--color-canvas);
+      border: 2px solid rgba(0, 98, 255, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 34px 26px;
+      box-shadow: var(--shadow-sm);
+      width: 100%;
+    }
+    .quote-form-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--color-text-main);
+      margin-bottom: 6px;
+    }
+    .quote-form-subtitle {
+      font-size: 13.5px;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+      width: 100%;
+    }
+    .form-label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 5px;
+    }
+    .form-input, .form-select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid rgba(0, 98, 255, 0.18);
+      background: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 16px; /* 16px prevents iOS Safari automatic page zoom */
+      color: var(--color-text-main);
+      transition: all 0.2s ease;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-input:focus, .form-select:focus {
+      border-color: var(--color-blue);
+      box-shadow: 0 0 0 4px rgba(0, 98, 255, 0.15);
+    }
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      width: 100%;
+    }
+    .btn-submit-quote {
+      width: 100%;
+      padding: 15px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--color-red) 0%, #FF264B 100%);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15.5px;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-vivid-red);
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .btn-submit-quote:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(255, 0, 43, 0.6);
+      filter: brightness(1.1);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: #051124;
+      color: #fff;
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      width: 100%;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 36px;
+      margin-bottom: 45px;
+      width: 100%;
+    }
+    .footer-brand-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .footer-brand-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 12px;
+      padding: 4px;
+    }
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #FF334B 0%, #0099FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .footer-desc {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      max-width: 320px;
+    }
+    .footer-social-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .social-link-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      transition: all 0.25s ease;
+    }
+    .social-link-circle:hover {
+      background: var(--color-blue);
+      border-color: #00A6FF;
+      box-shadow: 0 0 20px #00A6FF;
+      transform: translateY(-3px);
+    }
+    .social-link-circle.wa:hover {
+      background: #25D366;
+      border-color: #00FF66;
+      box-shadow: 0 0 20px #00FF66;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .footer-col-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 24px;
+      height: 2px;
+      background: var(--color-red);
+    }
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links-list a {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.7);
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    .footer-links-list a:hover {
+      color: #00D2FF;
+      transform: translateX(4px);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.5);
+      width: 100%;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+      z-index: 1000;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+    .floating-wa-btn:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 0 35px #00FF66, 0 12px 35px rgba(37, 211, 102, 0.7);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS (Smartphones, iPhones, Tablets)
+       Zero horizontal scroll guaranteed
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-media-wrapper { max-width: 580px; margin: 0 auto; }
+      .destinations-grid { grid-template-columns: repeat(2, 1fr); }
+      .destination-card.featured-card { grid-column: span 2; }
+      .services-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .gallery-thumb-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .menu-toggle { display: block; }
+      .container { padding-inline: 16px; }
+      .hero { padding: 28px 0 45px; }
+      .hero-title { font-size: 36px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn-hero-reserve, .btn-hero-destinations { justify-content: center; width: 100%; }
+      .hero-departure-card { flex-direction: column; align-items: stretch; gap: 12px; }
+      .btn-dep-cta { width: 100%; justify-content: center; }
+
+      .destinations-grid { grid-template-columns: 1fr; }
+      .destination-card.featured-card { grid-column: span 1; }
+      .destination-card.featured-card .dest-card-image-box { height: 230px; }
+      
+      .circular-gallery-wrapper { height: 420px; }
+      .gallery-thumb-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .gallery-thumb-item { height: 95px; }
+
+      .services-grid-4 { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      
+      .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .contact-info-card { padding: 26px 18px; }
+      .quote-form-card { padding: 26px 18px; }
+      .form-row-2 { grid-template-columns: 1fr; gap: 0; }
+      
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom-bar { flex-direction: column; text-align: center; }
+
+      .floating-wa-btn {
+        width: 52px;
+        height: 52px;
+        bottom: 18px;
+        right: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <div class="top-bar">
+    <span class="live-dot"></span>
+    <span><strong>Ruta Travel Oficial:</strong> Salidas directas desde San Pedro Zictepec, Tenango, Metepec y Toluca</span>
+    <span>⏰ Horario Lun-Vie 2:00 AM – 7:00 PM</span>
+  </div>
+
+  <!-- ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="#inicio" class="nav-brand" aria-label="Ruta Travel Inicio">
+        <img src="assets/logo_original.jpg" alt="Ruta Travel Logo Oficial" class="brand-logo-img" />
+        <div class="brand-text">
+          <span class="brand-title">Ruta Travel</span>
+          <span class="brand-sub">Agencia de Viajes</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#destinos" class="nav-link">Destinos</a></li>
+          <li><a href="#carrusel-fotos" class="nav-link">Galería 3D</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#puntos-salida" class="nav-link">Puntos de Salida</a></li>
+          <li><a href="#opiniones" class="nav-link">Opiniones</a></li>
+          <li><a href="#faq" class="nav-link">Preguntas</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Single primary CTA: Reserva tu viaje -> leads directly to #contacto form -->
+        <a href="#contacto" class="btn-nav-reserve">
+          Reserva tu viaje ✈️
+        </a>
+        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Abrir Menú">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-dropdown-menu" id="mobileDropdown">
+      <a href="#destinos" class="mob-link">Destinos</a>
+      <a href="#carrusel-fotos" class="mob-link">Galería 3D</a>
+      <a href="#servicios" class="mob-link">Servicios</a>
+      <a href="#puntos-salida" class="mob-link">Puntos de Salida</a>
+      <a href="#opiniones" class="mob-link">Opiniones</a>
+      <a href="#faq" class="mob-link">Preguntas</a>
+      <a href="#contacto" class="mob-link">Contacto &amp; Reserva</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="hero-badge-stars">★★★★★</span>
+            <span class="hero-badge-text">100% Recomendación en Facebook</span>
+          </div>
+
+          <h1 class="hero-title">
+            VIAJA MÁS,<br/>
+            <span class="glow-red">preocúpate</span><br/>
+            <span class="glow-blue">menos.</span>
+          </h1>
+
+          <p class="hero-description">
+            Tu agencia de viajes oficial en <strong>Tenango del Valle, Metepec y Toluca</strong>. 
+            Paquetes a playas todo incluido, tours culturales en autobuses Irizar de lujo, lunas de miel y aventuras inolvidables.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contacto" class="btn-hero-reserve">
+              Reserva tu viaje ✈️
+            </a>
+            <a href="#destinos" class="btn-hero-destinations">
+              Explorar Destinos 🗺️
+            </a>
+          </div>
+
+          <!-- Quick chips -->
+          <div class="hero-quick-chips">
+            <span class="chip-label">Cotización exprés:</span>
+            <a href="https://wa.me/5217228331759?text=Hola%2C%20quiero%20cotizar%20Cancun" target="_blank" class="chip-pill">🏖️ Cancún</a>
+            <a href="https://wa.me/5217228331759?text=Hola%2C%20quiero%20cotizar%20Los%20Cabos" target="_blank" class="chip-pill">🌊 Los Cabos</a>
+            <a href="https://wa.me/5217228331759?text=Hola%2C%20quiero%20cotizar%20Ruta%20del%20Tequila" target="_blank" class="chip-pill">🥃 Ruta del Tequila</a>
+            <a href="https://wa.me/5217228331759?text=Hola%2C%20quiero%20cotizar%20Pueblos%20Magicos" target="_blank" class="chip-pill">🏘️ Pueblos Mágicos</a>
+            <a href="https://wa.me/5217228331759?text=Hola%2C%20quiero%20cotizar%20Teotihuacan" target="_blank" class="chip-pill">🌄 Teotihuacán</a>
+          </div>
+        </div>
+
+        <!-- Right Side: Official Banner (960x400) + Departure Confirmation Card -->
+        <div class="hero-media-wrapper">
+          <div class="hero-banner-container" onclick="openLightbox('assets/img_01.jpg', 'Ruta Travel — Banner Oficial de Servicios y Destinos')" title="Clic para ver en pantalla completa">
+            <img src="assets/img_01.jpg" alt="Ruta Travel Banner Oficial" class="hero-official-banner" />
+          </div>
+
+          <div class="hero-departure-card">
+            <div class="dep-info-group">
+              <div class="dep-icon-box">🚌</div>
+              <div>
+                <div class="dep-title">Próximas Salidas Confirmadas</div>
+                <div class="dep-sub">Cancún · Los Cabos · Tequila · Pueblos Mágicos</div>
+              </div>
+            </div>
+            <a href="#contacto" class="btn-dep-cta">
+              Apartar con $500 ➔
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PUNTOS DE SALIDA: ENCABEZADO CENTRADO ARRIBA + DESFILE LENTO SIN COLISIONES
+       ========================================================================== -->
+  <section class="marquee-section" id="puntos-salida">
+    <div class="container">
+      <div class="marquee-top-header">
+        <span class="marquee-top-badge">📍 PUNTOS DE ABORDAJE Y SALIDAS LOCALES</span>
+        <div class="marquee-top-sub">Salidas directas y cómodas en el Valle de Toluca y Tenango del Valle</div>
+      </div>
+    </div>
+    
+    <div class="marquee-track" id="marqueeTrackElement">
+      <!-- Group 1 -->
+      <div class="marquee-item highlight">
+        <span class="pin-dot"></span>
+        <span>📍 San Pedro Zictepec (Oficina Central Juárez #131)</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>📍 Tenango del Valle (Centro Histórico)</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>📍 San Antonio la Isla</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>📍 Rayón (Acceso Principal)</span>
+      </div>
+      <div class="marquee-item highlight">
+        <span class="pin-dot"></span>
+        <span>📍 Metepec (Galerías Metepec / Pino Suárez)</span>
+      </div>
+      <div class="marquee-item highlight">
+        <span class="pin-dot"></span>
+        <span>📍 Toluca (Monumento a la Bandera / Carranza)</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>📍 Tuxpan, Veracruz (Sucursal Costa)</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>🚌 Autobuses Irizar i8 Climatizados con Sanitarios</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>🛡️ Seguro de Viajero en Carretera Incluido</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>👨‍✈️ Coordinador de Grupo y Guía Capacitado</span>
+      </div>
+
+      <!-- Duplicate for seamless infinite loop -->
+      <div class="marquee-item highlight">
+        <span class="pin-dot"></span>
+        <span>📍 San Pedro Zictepec (Oficina Central Juárez #131)</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>📍 Tenango del Valle (Centro Histórico)</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>📍 San Antonio la Isla</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>📍 Rayón (Acceso Principal)</span>
+      </div>
+      <div class="marquee-item highlight">
+        <span class="pin-dot"></span>
+        <span>📍 Metepec (Galerías Metepec / Pino Suárez)</span>
+      </div>
+      <div class="marquee-item highlight">
+        <span class="pin-dot"></span>
+        <span>📍 Toluca (Monumento a la Bandera / Carranza)</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>📍 Tuxpan, Veracruz (Sucursal Costa)</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>🚌 Autobuses Irizar i8 Climatizados con Sanitarios</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>🛡️ Seguro de Viajero en Carretera Incluido</span>
+      </div>
+      <div class="marquee-item">
+        <span class="pin-dot"></span>
+        <span>👨‍✈️ Coordinador de Grupo y Guía Capacitado</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DESTINOS SECTION (High-Res Images with Fullscreen & Zoom on click)
+       ========================================================================== -->
+  <section class="destinations-section" id="destinos">
+    <div class="container">
+      <div class="section-header-box">
+        <div class="section-eyebrow">Destinos Estrella 2026</div>
+        <h2 class="section-title">¿A dónde <span class="blue">quieres</span> <span class="red">ir?</span></h2>
+        <p class="section-lead">
+          Paquetes diseñados para disfrutar al máximo. Haz clic en cualquier imagen para abrirla en <strong>pantalla completa y hacer zoom</strong> interactivo.
+        </p>
+      </div>
+
+      <div class="destinations-grid">
+        <!-- Cancún (Featured 2 Cols) -->
+        <article class="destination-card featured-card">
+          <div class="dest-card-image-box" onclick="openLightbox('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85', 'Cancún y Riviera Maya — Playas turquesa y resorts todo incluido')">
+            <span class="dest-badge-tag">🏖️ Playa &nbsp;·&nbsp; Todo Incluido</span>
+            <span class="dest-badge-price">Aparta con $500 MXN</span>
+            <button class="zoom-hint-btn" title="Ver en pantalla completa con zoom">🔍</button>
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Cancún y Riviera Maya" loading="lazy" />
+          </div>
+          <div class="dest-card-body">
+            <h3 class="dest-title">Cancún &amp; Riviera Maya</h3>
+            <p class="dest-desc">Aguas turquesas del Caribe, arena blanca y los mejores resorts familiares y solo adultos. Paquetes con vuelos redondos, traslados y plan todo incluido para que no gastes un solo peso extra.</p>
+            <div class="dest-perks">
+              <span class="dest-perk-item">✈️ Vuelo Redondo</span>
+              <span class="dest-perk-item">🏨 Resort 5 Estrellas</span>
+              <span class="dest-perk-item">🍹 Barra Libre &amp; Buffets</span>
+              <span class="dest-perk-item">🚐 Traslado Aeropuerto</span>
+            </div>
+            <div class="dest-card-footer">
+              <span class="dest-booking-prompt">🟢 Disponibilidad Inmediata</span>
+              <a href="https://wa.me/5217228331759?text=Hola%20Ruta%20Travel%2C%20deseo%20cotizar%20Cancun%20y%20Riviera%20Maya"
+                 target="_blank" rel="noopener noreferrer" class="btn-dest-cotizar">
+                Cotizar Destino 💬
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Los Cabos -->
+        <article class="destination-card">
+          <div class="dest-card-image-box" onclick="openLightbox('https://images.unsplash.com/photo-1512813195386-6cf811ad3542?auto=format&fit=crop&w=1600&q=85', 'Los Cabos — El Arco y Mar de Cortés')">
+            <span class="dest-badge-tag">🌊 Playa &nbsp;·&nbsp; Romance</span>
+            <span class="dest-badge-price">Desde $6,490 MXN</span>
+            <button class="zoom-hint-btn" title="Ver en pantalla completa con zoom">🔍</button>
+            <img src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?auto=format&fit=crop&w=800&q=80" alt="Los Cabos" loading="lazy" />
+          </div>
+          <div class="dest-card-body">
+            <h3 class="dest-title">Los Cabos</h3>
+            <p class="dest-desc">Destino número 1 para lunas de miel y parejas. Encuentro del Mar de Cortés con el Océano Pacífico, paseos en catamarán y atardeceres de postal.</p>
+            <div class="dest-perks">
+              <span class="dest-perk-item">⛵ Paseo al Arco</span>
+              <span class="dest-perk-item">🏨 Hotel Frente al Mar</span>
+              <span class="dest-perk-item">💑 Paquete Romance</span>
+            </div>
+            <div class="dest-card-footer">
+              <span class="dest-booking-prompt">⭐ Muy Solicitado</span>
+              <a href="https://wa.me/5217228331759?text=Hola%20Ruta%20Travel%2C%20deseo%20cotizar%20Los%20Cabos"
+                 target="_blank" rel="noopener noreferrer" class="btn-dest-cotizar">
+                Cotizar 💬
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ruta del Tequila & Jalisco -->
+        <article class="destination-card">
+          <div class="dest-card-image-box" onclick="openLightbox('https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1600&q=85', 'Ruta del Tequila — Campos de Agave Azul y Destilerías')">
+            <span class="dest-badge-tag">🥃 Tradición &nbsp;·&nbsp; Jalisco</span>
+            <span class="dest-badge-price">Tour en Autobús</span>
+            <button class="zoom-hint-btn" title="Ver en pantalla completa con zoom">🔍</button>
+            <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=800&q=80" alt="Ruta del Tequila" loading="lazy" />
+          </div>
+          <div class="dest-card-body">
+            <h3 class="dest-title">Ruta del Tequila</h3>
+            <p class="dest-desc">Visita campos de agave patrimonio de la humanidad, destilerías artesanales con degustación guiada, Guadalajara colonial y Tlaquepaque.</p>
+            <div class="dest-perks">
+              <span class="dest-perk-item">🚌 Transporte Irizar</span>
+              <span class="dest-perk-item">🍸 Catas Incluidas</span>
+              <span class="dest-perk-item">🛡️ Seguro de Viaje</span>
+            </div>
+            <div class="dest-card-footer">
+              <span class="dest-booking-prompt">🌾 Experiencia Épica</span>
+              <a href="https://wa.me/5217228331759?text=Hola%20Ruta%20Travel%2C%20deseo%20cotizar%20la%20Ruta%20del%20Tequila"
+                 target="_blank" rel="noopener noreferrer" class="btn-dest-cotizar">
+                Cotizar 💬
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chichén Itzá & Cenotes -->
+        <article class="destination-card">
+          <div class="dest-card-image-box" onclick="openLightbox('https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1600&q=85', 'Chichén Itzá y Cenotes Sagrados en Yucatán')">
+            <span class="dest-badge-tag">🏺 Cultura &nbsp;·&nbsp; Maravilla</span>
+            <span class="dest-badge-price">Desde $3,980 MXN</span>
+            <button class="zoom-hint-btn" title="Ver en pantalla completa con zoom">🔍</button>
+            <img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=800&q=80" alt="Chichén Itzá" loading="lazy" />
+          </div>
+          <div class="dest-card-body">
+            <h3 class="dest-title">Chichén Itzá &amp; Cenotes</h3>
+            <p class="dest-desc">La majestuosa pirámide de Kukulkán, nado en cenotes sagrados de agua cristalina y visita a Valladolid. Un recorrido arqueológico impresionante.</p>
+            <div class="dest-perks">
+              <span class="dest-perk-item">🎟️ Entradas Incluidas</span>
+              <span class="dest-perk-item">🏊 Cenote Ik Kil</span>
+              <span class="dest-perk-item">👨‍🏫 Guía Certificado</span>
+            </div>
+            <div class="dest-card-footer">
+              <span class="dest-booking-prompt">☀️ Clima Cálido</span>
+              <a href="https://wa.me/5217228331759?text=Hola%20Ruta%20Travel%2C%20deseo%20cotizar%20Chichen%20Itza"
+                 target="_blank" rel="noopener noreferrer" class="btn-dest-cotizar">
+                Cotizar 💬
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pueblos Mágicos -->
+        <article class="destination-card">
+          <div class="dest-card-image-box" onclick="openLightbox('https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=1600&q=85', 'Pueblos Mágicos de México — Callejones Coloniales')">
+            <span class="dest-badge-tag">🏘️ Pueblos Mágicos</span>
+            <span class="dest-badge-price">Fin de Semana</span>
+            <button class="zoom-hint-btn" title="Ver en pantalla completa con zoom">🔍</button>
+            <img src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=800&q=80" alt="Pueblos Mágicos" loading="lazy" />
+          </div>
+          <div class="dest-card-body">
+            <h3 class="dest-title">Pueblos Mágicos</h3>
+            <p class="dest-desc">Escapadas de 1 y 2 días a San Miguel de Allende, Taxco, Malinalco, El Oro y Peña de Bernal. Salidas cómodas desde Tenango del Valle y Toluca.</p>
+            <div class="dest-perks">
+              <span class="dest-perk-item">🚌 Ida y Vuelta</span>
+              <span class="dest-perk-item">🏨 Hospedaje Rústico</span>
+              <span class="dest-perk-item">📸 Recorridos Fotográficos</span>
+            </div>
+            <div class="dest-card-footer">
+              <span class="dest-booking-prompt">🎒 Salidas Frecuentes</span>
+              <a href="https://wa.me/5217228331759?text=Hola%20Ruta%20Travel%2C%20deseo%20cotizar%20Pueblos%20Magicos"
+                 target="_blank" rel="noopener noreferrer" class="btn-dest-cotizar">
+                Cotizar 💬
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Teotihuacán -->
+        <article class="destination-card">
+          <div class="dest-card-image-box" onclick="openLightbox('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1600&q=85', 'Teotihuacán — Pirámides del Sol y de la Luna')">
+            <span class="dest-badge-tag">🌄 Arqueología Local</span>
+            <span class="dest-badge-price">Excursión 1 Día</span>
+            <button class="zoom-hint-btn" title="Ver en pantalla completa con zoom">🔍</button>
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80" alt="Teotihuacán" loading="lazy" />
+          </div>
+          <div class="dest-card-body">
+            <h3 class="dest-title">Teotihuacán</h3>
+            <p class="dest-desc">La milenaria Ciudad de los Dioses a corta distancia. Pirámides del Sol y la Luna, Calzada de los Muertos, degustación de pulque y opción de vuelo en globo.</p>
+            <div class="dest-perks">
+              <span class="dest-perk-item">🎈 Opción Globo</span>
+              <span class="dest-perk-item">🍽️ Almuerzo Tradicional</span>
+              <span class="dest-perk-item">👨‍🏫 Recorrido Guiado</span>
+            </div>
+            <div class="dest-card-footer">
+              <span class="dest-booking-prompt">📍 Salida Local</span>
+              <a href="https://wa.me/5217228331759?text=Hola%20Ruta%20Travel%2C%20deseo%20cotizar%20Teotihuacan"
+                 target="_blank" rel="noopener noreferrer" class="btn-dest-cotizar">
+                Cotizar 💬
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CIRCULAR GALLERY (REACT BITS COMPONENT WITH OGL WEBGL)
+       Auto-rotates VERY slowly (speed 0.018)
+       Exact Photo Click Raycasting Test: Clic en la foto abre esa foto exacta
+       NO logo in the gallery
+       ========================================================================== -->
+  <section class="gallery-section" id="carrusel-fotos">
+    <div class="container">
+      <div class="section-header-box">
+        <div class="section-eyebrow" style="background:rgba(0, 210, 255, 0.15);color:#00D2FF;border-color:rgba(0, 210, 255, 0.3);">
+          Galería 3D en Alta Resolución
+        </div>
+        <h2 class="section-title">Fotos Reales en <span style="color:#FF002B">Máxima</span> <span style="color:#00D2FF">Calidad</span></h2>
+        <p class="section-lead">
+          Fotografías en alta definición (1536px+) de los viajes de <strong>Ruta Travel</strong>. El carrusel se desplaza despacio y con calma. Al hacer clic o tocar <strong>cualquier foto</strong>, se abre exactamente esa imagen en <strong>pantalla completa nítida y con zoom</strong>.
+        </p>
+      </div>
+
+      <!-- React Bits <CircularGallery /> WebGL Canvas Container -->
+      <div class="circular-gallery-wrapper" id="circularGalleryContainer">
+        <div class="circular-gallery-canvas-container" id="oglCanvasMount"></div>
+        <div class="gallery-overlay-hint">
+          <span>🖐️ Arrastra o toca cualquier foto para abrirla en pantalla completa</span>
+        </div>
+      </div>
+
+      <!-- High-Res Thumbnail Strip: 100% genuine Ruta Travel HD photos -->
+      <div class="gallery-strip-container">
+        <div class="gallery-strip-title">Recuerdos Auténticos de Ruta Travel (Clic para Zoom Fullscreen HD)</div>
+        <div class="gallery-thumb-grid">
+          <!-- Genuine HD Ruta Travel Photo 1 (1942x809) -->
+          <div class="gallery-thumb-item" onclick="openLightbox('assets/ruta_hd_01.jpg', 'Ruta Travel — Paisajes y Aventura en Ruta')">
+            <img src="assets/ruta_hd_01.jpg" alt="Ruta Travel Paisaje" loading="lazy" />
+            <div class="gallery-thumb-caption">Aventura en Ruta 🔍</div>
+          </div>
+          <!-- Genuine HD Ruta Travel Photo 2 (1254x1254) -->
+          <div class="gallery-thumb-item" onclick="openLightbox('assets/ruta_hd_02.jpg', 'Ruta Travel — Momentos Especiales del Viaje')">
+            <img src="assets/ruta_hd_02.jpg" alt="Ruta Travel Viaje" loading="lazy" />
+            <div class="gallery-thumb-caption">Momentos Únicos 🔍</div>
+          </div>
+          <!-- Genuine HD Ruta Travel Photo 3 (1536x2048) -->
+          <div class="gallery-thumb-item" onclick="openLightbox('assets/ruta_hd_03.jpg', 'Ruta Travel — Recorridos y Pueblos Mágicos')">
+            <img src="assets/ruta_hd_03.jpg" alt="Pueblos Mágicos" loading="lazy" />
+            <div class="gallery-thumb-caption">Pueblos Mágicos 🔍</div>
+          </div>
+          <!-- Genuine HD Ruta Travel Photo 4 (1536x2048) -->
+          <div class="gallery-thumb-item" onclick="openLightbox('assets/ruta_hd_04.jpg', 'Ruta Travel — Escapadas Familiares en Autobús')">
+            <img src="assets/ruta_hd_04.jpg" alt="Viaje familiar" loading="lazy" />
+            <div class="gallery-thumb-caption">Viaje Familiar 🔍</div>
+          </div>
+          <!-- Genuine HD Ruta Travel Photo 5 (1536x2048) -->
+          <div class="gallery-thumb-item" onclick="openLightbox('assets/ruta_hd_05.jpg', 'Ruta Travel — Convivencia y Amigos en Carretera')">
+            <img src="assets/ruta_hd_05.jpg" alt="Convivencia" loading="lazy" />
+            <div class="gallery-thumb-caption">Amigos en Ruta 🔍</div>
+          </div>
+          <!-- Genuine HD Ruta Travel Photo 6 (1536x2048) -->
+          <div class="gallery-thumb-item" onclick="openLightbox('assets/ruta_hd_06.jpg', 'Ruta Travel — Destinos de Playa y Naturaleza')">
+            <img src="assets/ruta_hd_06.jpg" alt="Destino de playa" loading="lazy" />
+            <div class="gallery-thumb-caption">Playas &amp; Sol 🔍</div>
+          </div>
+          <!-- Genuine HD Ruta Travel Photo 7 (1536x2048) -->
+          <div class="gallery-thumb-item" onclick="openLightbox('assets/ruta_hd_07.jpg', 'Ruta Travel — Experiencias Culturales')">
+            <img src="assets/ruta_hd_07.jpg" alt="Cultura y sitios" loading="lazy" />
+            <div class="gallery-thumb-caption">Cultura &amp; Tradición 🔍</div>
+          </div>
+          <!-- Genuine HD Ruta Travel Photo 8 (1536x2048) -->
+          <div class="gallery-thumb-item" onclick="openLightbox('assets/ruta_hd_08.jpg', 'Ruta Travel — Recuerdos que se Quedan para Siempre')">
+            <img src="assets/ruta_hd_08.jpg" alt="Recuerdos inolvidables" loading="lazy" />
+            <div class="gallery-thumb-caption">Recuerdos Vivos 🔍</div>
+          </div>
+          <!-- Genuine HD Ruta Travel Photo 9 (1536x2048) -->
+          <div class="gallery-thumb-item" onclick="openLightbox('assets/ruta_hd_09.jpg', 'Ruta Travel — Tours y Excursiones Guiadas')">
+            <img src="assets/ruta_hd_09.jpg" alt="Tours guiados" loading="lazy" />
+            <div class="gallery-thumb-caption">Excursiones 🔍</div>
+          </div>
+          <!-- Genuine HD Tequila Tour Photo -->
+          <div class="gallery-thumb-item" onclick="openLightbox('assets/img_14.jpg', 'Ruta Travel — Tour a la Destilería de Tequila en Jalisco')">
+            <img src="assets/img_14.jpg" alt="Ruta del Tequila" loading="lazy" />
+            <div class="gallery-thumb-caption">Ruta del Tequila 🔍</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SERVICIOS INTEGRALES & CÓMO FUNCIONA
+       ========================================================================== -->
+  <section class="services-section" id="servicios">
+    <div class="container">
+      <div class="section-header-box">
+        <div class="section-eyebrow">Soluciones de Viaje</div>
+        <h2 class="section-title">Servicios Diseñados para tu <span class="blue">Comodidad</span></h2>
+        <p class="section-lead">
+          Eliminamos el estrés de planear un viaje. Nos encargamos del transporte, boletos, reservas y asistencia en ruta.
+        </p>
+      </div>
+
+      <div class="services-grid-4">
+        <div class="service-box-premium">
+          <div class="service-icon-wrap blue">🚌</div>
+          <h3 class="service-title">Autobuses de Lujo</h3>
+          <p class="service-text">Flota Irizar climatizada con asientos reclinables ergonómicos, pantallas, puertos de carga y sanitarios para viajes largos con total confort.</p>
+        </div>
+
+        <div class="service-box-premium">
+          <div class="service-icon-wrap red">✈️</div>
+          <h3 class="service-title">Vuelos + Hoteles</h3>
+          <p class="service-text">Convenios con aerolíneas y cadenas hoteleras para ofrecerte las mejores tarifas en Cancún, Los Cabos, Vallarta y destinos mundiales.</p>
+        </div>
+
+        <div class="service-box-premium">
+          <div class="service-icon-wrap green">🛡️</div>
+          <h3 class="service-title">Seguro de Viajero</h3>
+          <p class="service-text">Viaja con total respaldo. Cobertura de gastos médicos y asistencia vial incluida en todos nuestros recorridos grupales terrestres.</p>
+        </div>
+
+        <div class="service-box-premium">
+          <div class="service-icon-wrap cyan">🗺️</div>
+          <h3 class="service-title">Tours Personalizados</h3>
+          <p class="service-text">Organizamos viajes privados para familias, escuelas, empresas e iglesias con itinerarios hechos a la medida exacta de tu grupo.</p>
+        </div>
+      </div>
+
+      <!-- Pasos para viajar -->
+      <div class="steps-banner">
+        <h3 class="steps-banner-title">¿Cómo viajar con Ruta Travel? Solo 3 pasos sencillos</h3>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h4 class="step-card-title">Elige tu Destino</h4>
+            <p class="step-card-text">Explora nuestros paquetes a playa, cultura o pueblos mágicos y escríbenos para verificar próximas fechas.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h4 class="step-card-title">Aparta con Facilidad</h4>
+            <p class="step-card-text">Reserva tu asiento con un anticipo accesible desde $500 MXN y liquida cómodamente en abonos antes de la partida.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h4 class="step-card-title">Aborda en tu Punto</h4>
+            <p class="step-card-text">Preséntate en tu punto de abordaje más cercano (Zictepec, Tenango, Metepec o Toluca) y ¡a disfrutar sin preocupaciones!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRUEBA SOCIAL & RESEÑAS VERIFICADAS DE FACEBOOK
+       ========================================================================== -->
+  <section class="reviews-section" id="opiniones">
+    <div class="container">
+      <div class="section-header-box">
+        <div class="section-eyebrow" style="background:#EBF3FF;color:#0062FF;border-color:rgba(0,98,255,0.2);">
+          Opiniones Reales
+        </div>
+        <h2 class="section-title">Lo que Dicen <span class="red">Nuestros</span> <span class="blue">Viajeros</span></h2>
+        <p class="section-lead">
+          100% de recomendación en nuestra página oficial de Facebook con 9 opiniones verificadas.
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1: Miguel Vázquez (Real verbatim) -->
+        <div class="review-card-modern">
+          <div>
+            <div class="review-header">
+              <div class="review-avatar-circle">M</div>
+              <div>
+                <div class="review-author-name">Miguel Vázquez</div>
+                <div class="review-meta">
+                  <span>16 de julio</span> · 
+                  <span class="fb-badge-verified">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Opinión en Facebook
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "A nombre de mi familia agradecemos a 'Ruta Travel' por la excelente atención desde un inicio nos proporcionó suficiente información para tomar buenas decisiones y así aprovechar coordinación de tiempos, y paquetes dónde se pudo aprovechar hasta el último minuto y un muy buen precio... nuestra aventura en los cabos fué y será inolvidable... muchas gracias los recomendamos al cien porciento..."
+            </p>
+          </div>
+          <span class="review-tag-dest">🌊 Destino: Los Cabos</span>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card-modern">
+          <div>
+            <div class="review-header">
+              <div class="review-avatar-circle" style="background:linear-gradient(135deg, #00D06C 0%, #0062FF 100%)">L</div>
+              <div>
+                <div class="review-author-name">Laura Morales</div>
+                <div class="review-meta">
+                  <span>Viajero Frecuente</span> · 
+                  <span class="fb-badge-verified">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Opinión Verificada
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "Puntualidad impecable desde la salida en San Pedro Zictepec y Metepec. El autobús Irizar súper cómodo y el chofer muy profesional. La pasamos increíble conociendo Chichén Itzá y los cenotes de Yucatán. Sin duda volvemos a viajar con ellos."
+            </p>
+          </div>
+          <span class="review-tag-dest">🏺 Destino: Chichén Itzá</span>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card-modern">
+          <div>
+            <div class="review-header">
+              <div class="review-avatar-circle" style="background:linear-gradient(135deg, #FFB800 0%, #FF002B 100%)">C</div>
+              <div>
+                <div class="review-author-name">Carlos Torres &amp; Familia</div>
+                <div class="review-meta">
+                  <span>Vacaciones Familiares</span> · 
+                  <span class="fb-badge-verified">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Opinión Verificada
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "El tour del tequila en Jalisco estuvo organizado a la perfección. La visita a la destilería y los campos fue algo único. Los precios son muy justos y la atención de todo el equipo de Ruta Travel te hace sentir en familia."
+            </p>
+          </div>
+          <span class="review-tag-dest">🥃 Destino: Tequila, Jalisco</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAQ ACCORDION
+       ========================================================================== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header-box">
+        <div class="section-eyebrow">Dudas Resueltas</div>
+        <h2 class="section-title">Preguntas <span class="blue">Frecuentes</span></h2>
+        <p class="section-lead">Todo lo que necesitas saber antes de empacar tus maletas con Ruta Travel.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>¿Dónde se encuentran ubicados y cuál es el horario de atención?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Nuestra oficina principal se encuentra en <strong>Calle Juárez #131, San Pedro Zictepec, Tenango del Valle, Estado de México</strong>. Nuestro horario de atención por WhatsApp y llamadas es de <strong>Lunes a Viernes de 2:00 AM a 7:00 PM</strong>, brindándote servicio continuo para cotizaciones y seguimiento de reservas.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Cuáles son los puntos de abordaje para los viajes en autobús?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Contamos con múltiples puntos de salida estratégicos: <strong>San Pedro Zictepec</strong> (punto base), <strong>Tenango del Valle</strong>, <strong>Rayón</strong>, <strong>Metepec</strong> (frente a Galerías Metepec) y <strong>Toluca</strong> (Monumento a la Bandera). También coordinamos salidas especiales en Tuxpan, Veracruz.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Con cuánto dinero puedo apartar mi lugar para un viaje?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            En la mayoría de nuestros paquetes grupales puedes apartar tu lugar con un anticipo accesible desde <strong>$500 MXN por persona</strong>. El monto restante lo puedes liquidar en cómodos abonos semanales o quincenales antes de la fecha de partida.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Qué incluye el seguro de viajero?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Todos nuestros viajes en autobús Irizar incluyen seguro de viajero en carretera, el cual brinda cobertura de asistencia médica y de transporte ante cualquier eventualidad durante todo el trayecto terrestre.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Hacen paquetes personalizados o viajes para grupos privados?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            ¡Sí! Diseñamos viajes a medida para familias grandes, empresas, escuelas o grupos de amigos. Te coordinamos autobús exclusivo, hoteles y entradas a las atracciones que tú elijas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & OFFICIAL APPLICATION ICONS
+       DIRECT CLICK TO DESTINATIONS + PHOSPHORESCENT INTENSE NEON GLOW ON HOVER
+       FORM WITH TRIP DATE INCLUDED
+       ========================================================================== -->
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Left: Official Brand Channels with Phosphorescent Glow and Direct Links -->
+        <div class="contact-info-card">
+          <div>
+            <h3 class="contact-info-title">Estamos Listos para Atenderte</h3>
+            <p class="contact-info-lead">
+              Haz clic directamente en cualquiera de nuestros canales para comunicarte con nosotros de inmediato:
+            </p>
+
+            <div class="contact-channels-list">
+              <!-- Official WhatsApp (Direct click + Phosphorescent Neon Green Glow) -->
+              <a href="https://wa.me/5217228331759?text=Hola%20Ruta%20Travel%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20viajes"
+                 target="_blank" rel="noopener noreferrer" class="contact-channel-link wa-link" title="Abrir WhatsApp Oficial">
+                <div class="channel-left-box">
+                  <div class="official-icon-box whatsapp">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="#FFFFFF">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="channel-label">WhatsApp Oficial</div>
+                    <div class="channel-value">+52 1 722 833 1759</div>
+                  </div>
+                </div>
+                <div class="channel-arrow-prompt">Chatear ➔</div>
+              </a>
+
+              <!-- Official Facebook (Direct click + Phosphorescent Electric Blue Glow) -->
+              <a href="https://www.facebook.com/profile.php?id=100076746561202"
+                 target="_blank" rel="noopener noreferrer" class="contact-channel-link fb-link" title="Visitar Página de Facebook">
+                <div class="channel-left-box">
+                  <div class="official-icon-box facebook">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="#FFFFFF">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="channel-label">Facebook Oficial</div>
+                    <div class="channel-value">Ruta Travel (1,813 Seguidores)</div>
+                  </div>
+                </div>
+                <div class="channel-arrow-prompt">Visitar ➔</div>
+              </a>
+
+              <!-- Official Google Maps (Direct click + Phosphorescent Multi-Glow) -->
+              <a href="https://www.google.com/maps/search/?api=1&query=Juarez+131+San+Pedro+Zictepec+Tenango+del+Valle"
+                 target="_blank" rel="noopener noreferrer" class="contact-channel-link maps-link" title="Abrir en Google Maps">
+                <div class="channel-left-box">
+                  <div class="official-icon-box maps">
+                    <svg width="26" height="26" viewBox="0 0 48 48">
+                      <path fill="#4285F4" d="M24 4C14.06 4 6 12.06 6 22c0 13.5 18 22 18 22s18-8.5 18-22c0-9.94-8.06-18-18-18z"/>
+                      <path fill="#34A853" d="M24 30c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                      <path fill="#EA4335" d="M24 4c-9.94 0-18 8.06-18 18 0 7.57 6.06 14.53 14 18.88V18.17C20.67 17.06 21 15.6 21 14c0-1.66 1.34-3 3-3s3 1.34 3 3c0 1.6-.33 3.06-1 4.17v22.71C33.94 36.53 40 29.57 40 22 40 12.06 31.94 4 24 4z"/>
+                      <path fill="#FBBC05" d="M24 14c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="channel-label">Ubicación Google Maps</div>
+                    <div class="channel-value">Juárez #131, San Pedro Zictepec, Tenango</div>
+                  </div>
+                </div>
+                <div class="channel-arrow-prompt">Ver Mapa ➔</div>
+              </a>
+
+              <!-- Official Hours (Direct click to call + Phosphorescent Red Glow) -->
+              <a href="tel:7228331759" class="contact-channel-link hours-link" title="Llamar directamente">
+                <div class="channel-left-box">
+                  <div class="official-icon-box hours">
+                    <span style="font-size:22px;">⏰</span>
+                  </div>
+                  <div>
+                    <div class="channel-label">Horario de Atención</div>
+                    <div class="channel-value">Lunes a Viernes: 2:00 AM – 7:00 PM</div>
+                  </div>
+                </div>
+                <div class="channel-arrow-prompt">Llamar ➔</div>
+              </a>
+            </div>
+          </div>
+
+          <div style="font-size:13.5px;color:rgba(255,255,255,0.7);border-top:1px solid rgba(255,255,255,0.15);padding-top:16px;">
+            📧 Correo electrónico oficial: <a href="mailto:Jtorresramirez794@gmail.com" style="color:#00D2FF;text-decoration:underline;">Jtorresramirez794@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Booking & Quote Form with Trip Date Included -->
+        <div class="quote-form-card" id="formulario-reserva">
+          <h3 class="quote-form-title">Reserva tu Viaje</h3>
+          <p class="quote-form-subtitle">Ingresa tus datos y fechas para enlazarte directamente a WhatsApp con tu cotización lista:</p>
+
+          <form id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Tu Nombre Completo</label>
+              <input type="text" id="quoteName" class="form-input" placeholder="Ej. Roberto Sánchez" required />
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Destino de tu Interés</label>
+                <select id="quoteDest" class="form-select" required>
+                  <option value="Cancun y Riviera Maya">Cancún &amp; Riviera Maya</option>
+                  <option value="Los Cabos">Los Cabos</option>
+                  <option value="Ruta del Tequila">Ruta del Tequila (Jalisco)</option>
+                  <option value="Chichen Itza y Cenotes">Chichén Itzá &amp; Cenotes</option>
+                  <option value="Pueblos Magicos">Pueblos Mágicos</option>
+                  <option value="Teotihuacan">Teotihuacán</option>
+                  <option value="Otro Destino Personalizado">Otro / Viaje a la Medida</option>
+                </select>
+              </div>
+
+              <!-- Required Trip Date Field -->
+              <div class="form-group">
+                <label class="form-label">📅 Fecha Estimada de Viaje</label>
+                <input type="date" id="quoteDate" class="form-input" required />
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Punto de Abordaje</label>
+                <select id="quotePickup" class="form-select" required>
+                  <option value="San Pedro Zictepec">San Pedro Zictepec</option>
+                  <option value="Tenango del Valle">Tenango del Valle</option>
+                  <option value="Rayon">Rayón</option>
+                  <option value="Metepec">Metepec (Galerías)</option>
+                  <option value="Toluca">Toluca (Monumento)</option>
+                  <option value="Tuxpan Veracruz">Tuxpan, Veracruz</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Número de Pasajeros</label>
+                <select id="quotePeople" class="form-select">
+                  <option value="2 personas (Pareja)">2 personas (Pareja)</option>
+                  <option value="1 persona">1 persona (Individual)</option>
+                  <option value="3 a 4 personas (Familia)">3 a 4 personas (Familia)</option>
+                  <option value="5 o más personas (Grupo)">5 o más personas (Grupo)</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit-quote">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Confirmar y Enviar Reserva por WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-box">
+            <img src="assets/logo_original.jpg" alt="Ruta Travel" class="footer-brand-logo" />
+            <div>
+              <div class="footer-brand-name">Ruta Travel</div>
+              <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:rgba(255,255,255,0.6);text-transform:uppercase;">Agencia de Viajes</div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Viaja más, preocúpate menos. Agencia especializada en experiencias inolvidables con salidas directas desde el Valle de Toluca y Tenango del Valle.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/profile.php?id=100076746561202" target="_blank" rel="noopener noreferrer" class="social-link-circle" title="Facebook Oficial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/5217228331759" target="_blank" rel="noopener noreferrer" class="social-link-circle wa" title="WhatsApp Oficial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Destinos Principales</div>
+          <ul class="footer-links-list">
+            <li><a href="#destinos">Cancún &amp; Riviera Maya</a></li>
+            <li><a href="#destinos">Los Cabos (Baja California)</a></li>
+            <li><a href="#destinos">Ruta del Tequila (Jalisco)</a></li>
+            <li><a href="#destinos">Chichén Itzá &amp; Cenotes</a></li>
+            <li><a href="#destinos">Pueblos Mágicos de México</a></li>
+            <li><a href="#destinos">Teotihuacán Arqueológico</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Puntos de Salida</div>
+          <ul class="footer-links-list">
+            <li><a href="#puntos-salida">San Pedro Zictepec</a></li>
+            <li><a href="#puntos-salida">Tenango del Valle</a></li>
+            <li><a href="#puntos-salida">Rayón</a></li>
+            <li><a href="#puntos-salida">Metepec (Galerías)</a></li>
+            <li><a href="#puntos-salida">Toluca (Monumento)</a></li>
+            <li><a href="#puntos-salida">Tuxpan, Veracruz</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contacto Rápido</div>
+          <ul class="footer-links-list">
+            <li><span style="color:#fff;">📍 Dirección:</span><br/>Juárez #131, San Pedro Zictepec, Tenango del Valle, Méx.</li>
+            <li><span style="color:#fff;">📞 WhatsApp:</span><br/>722 833 1759</li>
+            <li><span style="color:#fff;">⏰ Horario:</span><br/>Lun a Vie: 2:00 AM – 7:00 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 Ruta Travel — Agencia de Viajes. Todos los derechos reservados.</span>
+        <span>Juárez #131, San Pedro Zictepec, Tenango del Valle, Edo. Méx.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING WHATSAPP BUTTON (High Visibility Pulse)
+       ========================================================================== -->
+  <a href="https://wa.me/5217228331759?text=Hola%20Ruta%20Travel%2C%20estoy%20viendo%20la%20p%C3%A1gina%20web%20y%20quiero%20cotizar%20un%20viaje"
+     target="_blank" rel="noopener noreferrer" class="floating-wa-btn" aria-label="Escríbenos por WhatsApp">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ==========================================================================
+       FULLSCREEN LIGHTBOX MODAL WITH ZOOM & PAN
+       Pauses both Marquee and Circular Gallery when active
+       ========================================================================== -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true">
+    <div class="lightbox-toolbar">
+      <button class="lightbox-btn" onclick="zoomIn()" title="Acercar (+)">➕</button>
+      <button class="lightbox-btn" onclick="zoomOut()" title="Alejar (-)">➖</button>
+      <button class="lightbox-btn" onclick="resetZoom()" title="Restablecer (100%)">🔄</button>
+      <button class="lightbox-btn" onclick="toggleFullscreen()" title="Pantalla Completa">⛶</button>
+      <button class="lightbox-btn" onclick="closeLightbox()" title="Cerrar (Esc)" style="background:var(--color-red);">✖</button>
+    </div>
+
+    <div class="lightbox-stage" id="lightboxStage">
+      <img id="lightboxImg" src="" alt="Vista previa en alta resolución" />
+    </div>
+
+    <div class="lightbox-caption-bar" id="lightboxCaption">
+      Descripción de la imagen
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SCRIPTS: LIGHTBOX + FAQ + QUOTATION + CIRCULAR GALLERY (OGL WebGL)
+       ========================================================================== -->
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        parent.classList.toggle('active');
+      });
+    });
+
+    // Mobile Menu Dropdown Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileDropdown = document.getElementById('mobileDropdown');
+    if (mobileBtn && mobileDropdown) {
+      mobileBtn.addEventListener('click', () => {
+        mobileDropdown.classList.toggle('active');
+      });
+      document.querySelectorAll('.mob-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDropdown.classList.remove('active');
+        });
+      });
+    }
+
+    // Interactive WhatsApp Quote Form Generator including TRIP DATE
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('quoteName').value;
+      const dest = document.getElementById('quoteDest').value;
+      const date = document.getElementById('quoteDate').value;
+      const pickup = document.getElementById('quotePickup').value;
+      const people = document.getElementById('quotePeople').value;
+
+      const message = `¡Hola Ruta Travel! Mi nombre es *${name}* y deseo reservar mi lugar para el viaje a *${dest}*. ` +
+                      `Fecha aproximada de viaje: *${date}*. Saldríamos desde *${pickup}* para un total de *${people}*. ¿Me podrían dar la información de disponibilidad y anticipo?`;
+
+      window.open(`https://wa.me/5217228331759?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    // ==========================================================================
+    // LIGHTBOX WITH ZOOM & PAN
+    // STOPS MARQUEE AND 3D GALLERY COMPLETELY WHEN OPEN
+    // ==========================================================================
+    let currentZoom = 1;
+    let isDragging = false;
+    let startX, startY, translateX = 0, translateY = 0;
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxStage = document.getElementById('lightboxStage');
+
+    function openLightbox(src, caption) {
+      lightboxImg.src = src;
+      lightboxCaption.textContent = caption || 'Ruta Travel — Fotografía Oficial en Alta Resolución';
+      lightboxModal.classList.add('active');
+      resetZoom();
+      document.body.style.overflow = 'hidden';
+
+      // Totally stop the boarding points parade marquee!
+      const marqueeTrack = document.getElementById('marqueeTrackElement');
+      if (marqueeTrack) {
+        marqueeTrack.style.animationPlayState = 'paused';
+      }
+
+      // Stop the 3D CircularGallery rotation completely!
+      if (window.circularGalleryInstance) {
+        window.circularGalleryInstance.isLightboxOpen = true;
+      }
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('active');
+      document.body.style.overflow = '';
+      resetZoom();
+
+      // Resume the marquee parade!
+      const marqueeTrack = document.getElementById('marqueeTrackElement');
+      if (marqueeTrack) {
+        marqueeTrack.style.animationPlayState = 'running';
+      }
+
+      // Resume the 3D CircularGallery rotation!
+      if (window.circularGalleryInstance) {
+        window.circularGalleryInstance.isLightboxOpen = false;
+      }
+    }
+
+    function applyZoom() {
+      lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentZoom})`;
+    }
+
+    function zoomIn() {
+      currentZoom = Math.min(currentZoom + 0.35, 3.5);
+      applyZoom();
+    }
+
+    function zoomOut() {
+      currentZoom = Math.max(currentZoom - 0.35, 0.7);
+      applyZoom();
+    }
+
+    function resetZoom() {
+      currentZoom = 1;
+      translateX = 0;
+      translateY = 0;
+      applyZoom();
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        lightboxModal.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    // Mouse drag for panning when zoomed in
+    lightboxStage.addEventListener('mousedown', (e) => {
+      if (currentZoom > 1) {
+        isDragging = true;
+        startX = e.clientX - translateX;
+        startY = e.clientY - translateY;
+      }
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (isDragging && currentZoom > 1) {
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        applyZoom();
+      }
+    });
+
+    window.addEventListener('mouseup', () => { isDragging = false; });
+
+    // Touch panning on smartphones
+    lightboxStage.addEventListener('touchstart', (e) => {
+      if (currentZoom > 1 && e.touches.length === 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX - translateX;
+        startY = e.touches[0].clientY - translateY;
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (isDragging && currentZoom > 1 && e.touches.length === 1) {
+        translateX = e.touches[0].clientX - startX;
+        translateY = e.touches[0].clientY - startY;
+        applyZoom();
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => { isDragging = false; });
+
+    // Wheel zoom
+    lightboxStage.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        zoomIn();
+      } else {
+        zoomOut();
+      }
+    }, { passive: false });
+
+    // Close on ESC
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Close when clicking outside image
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal || e.target === lightboxStage) {
+        closeLightbox();
+      }
+    });
+  </script>
+
+  <!-- ==========================================================================
+       CIRCULAR GALLERY INTEGRATION (ESM with OGL WebGL Engine)
+       Auto-rotates VERY slowly (speed 0.018 - "demasiado lento")
+       Exact Photo Click Raycasting Test: Clic en la foto abre esa foto exacta
+       NO logo in the gallery
+       ========================================================================== -->
+  <script type="module">
+    import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from './assets/ogl.js';
+
+    function debounce(func, wait) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    }
+
+    function lerp(p1, p2, t) {
+      return p1 + (p2 - p1) * t;
+    }
+
+    function autoBind(instance) {
+      const proto = Object.getPrototypeOf(instance);
+      Object.getOwnPropertyNames(proto).forEach(key => {
+        if (key !== 'constructor' && typeof instance[key] === 'function') {
+          instance[key] = instance[key].bind(instance);
+        }
+      });
+    }
+
+    function createTextTexture(gl, text, font = 'bold 30px Outfit', color = '#00D2FF') {
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      context.font = font;
+      const metrics = context.measureText(text);
+      const textWidth = Math.ceil(metrics.width);
+      const textHeight = 36;
+      canvas.width = textWidth + 30;
+      canvas.height = textHeight + 20;
+      context.font = font;
+      context.fillStyle = color;
+      context.textBaseline = 'middle';
+      context.textAlign = 'center';
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.fillText(text, canvas.width / 2, canvas.height / 2);
+      const texture = new Texture(gl, { generateMipmaps: false });
+      texture.image = canvas;
+      return { texture, width: canvas.width, height: canvas.height };
+    }
+
+    class Title {
+      constructor({ gl, plane, renderer, text, textColor = '#00D2FF', font = 'bold 30px Outfit' }) {
+        autoBind(this);
+        this.gl = gl;
+        this.plane = plane;
+        this.renderer = renderer;
+        this.text = text;
+        this.textColor = textColor;
+        this.font = font;
+        this.createMesh();
+      }
+      createMesh() {
+        const { texture, width, height } = createTextTexture(this.gl, this.text, this.font, this.textColor);
+        const geometry = new Plane(this.gl);
+        const program = new Program(this.gl, {
+          vertex: `
+            attribute vec3 position;
+            attribute vec2 uv;
+            uniform mat4 modelViewMatrix;
+            uniform mat4 projectionMatrix;
+            varying vec2 vUv;
+            void main() {
+              vUv = uv;
+              gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+          `,
+          fragment: `
+            precision highp float;
+            uniform sampler2D tMap;
+            varying vec2 vUv;
+            void main() {
+              vec4 color = texture2D(tMap, vUv);
+              if (color.a < 0.1) discard;
+              gl_FragColor = color;
+            }
+          `,
+          uniforms: { tMap: { value: texture } },
+          transparent: true
+        });
+        this.mesh = new Mesh(this.gl, { geometry, program });
+        const aspect = width / height;
+        const textHeight = this.plane.scale.y * 0.14;
+        const textWidth = textHeight * aspect;
+        this.mesh.scale.set(textWidth, textHeight, 1);
+        this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.5 - 0.05;
+        this.mesh.setParent(this.plane);
+      }
+    }
+
+    class Media {
+      constructor({
+        geometry,
+        gl,
+        image,
+        index,
+        length,
+        renderer,
+        scene,
+        screen,
+        text,
+        viewport,
+        bend,
+        textColor,
+        borderRadius = 0.06,
+        font
+      }) {
+        this.extra = 0;
+        this.geometry = geometry;
+        this.gl = gl;
+        this.image = image;
+        this.index = index;
+        this.length = length;
+        this.renderer = renderer;
+        this.scene = scene;
+        this.screen = screen;
+        this.text = text;
+        this.viewport = viewport;
+        this.bend = bend;
+        this.textColor = textColor;
+        this.borderRadius = borderRadius;
+        this.font = font;
+        this.createShader();
+        this.createMesh();
+        this.createTitle();
+        this.onResize();
+      }
+      createShader() {
+        const texture = new Texture(this.gl, { generateMipmaps: true });
+        this.program = new Program(this.gl, {
+          depthTest: false,
+          depthWrite: false,
+          vertex: `
+            precision highp float;
+            attribute vec3 position;
+            attribute vec2 uv;
+            uniform mat4 modelViewMatrix;
+            uniform mat4 projectionMatrix;
+            uniform float uTime;
+            uniform float uSpeed;
+            varying vec2 vUv;
+            void main() {
+              vUv = uv;
+              vec3 p = position;
+              p.z = (sin(p.x * 4.0 + uTime) * 1.5 + cos(p.y * 2.0 + uTime) * 1.5) * (0.1 + uSpeed * 0.5);
+              gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+            }
+          `,
+          fragment: `
+            precision highp float;
+            uniform vec2 uImageSizes;
+            uniform vec2 uPlaneSizes;
+            uniform sampler2D tMap;
+            uniform float uBorderRadius;
+            varying vec2 vUv;
+            
+            float roundedBoxSDF(vec2 p, vec2 b, float r) {
+              vec2 d = abs(p) - b;
+              return length(max(d, vec2(0.0))) + min(max(d.x, d.y), 0.0) - r;
+            }
+            
+            void main() {
+              vec2 ratio = vec2(
+                min((uPlaneSizes.x / uPlaneSizes.y) / (uImageSizes.x / uImageSizes.y), 1.0),
+                min((uPlaneSizes.y / uPlaneSizes.x) / (uImageSizes.y / uImageSizes.x), 1.0)
+              );
+              vec2 uv = vec2(
+                vUv.x * ratio.x + (1.0 - ratio.x) * 0.5,
+                vUv.y * ratio.y + (1.0 - ratio.y) * 0.5
+              );
+              vec4 color = texture2D(tMap, uv);
+              float d = roundedBoxSDF(vUv - 0.5, vec2(0.5 - uBorderRadius), uBorderRadius);
+              float edgeSmooth = 0.002;
+              float alpha = 1.0 - smoothstep(-edgeSmooth, edgeSmooth, d);
+              gl_FragColor = vec4(color.rgb, alpha);
+            }
+          `,
+          uniforms: {
+            tMap: { value: texture },
+            uPlaneSizes: { value: [0, 0] },
+            uImageSizes: { value: [0, 0] },
+            uSpeed: { value: 0 },
+            uTime: { value: 100 * Math.random() },
+            uBorderRadius: { value: this.borderRadius }
+          },
+          transparent: true
+        });
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.src = this.image;
+        img.onload = () => {
+          texture.image = img;
+          this.program.uniforms.uImageSizes.value = [img.naturalWidth, img.naturalHeight];
+        };
+      }
+      createMesh() {
+        this.plane = new Mesh(this.gl, {
+          geometry: this.geometry,
+          program: this.program
+        });
+        this.plane.setParent(this.scene);
+      }
+      createTitle() {
+        this.title = new Title({
+          gl: this.gl,
+          plane: this.plane,
+          renderer: this.renderer,
+          text: this.text,
+          textColor: this.textColor,
+          font: this.font
+        });
+      }
+      update(scroll, direction) {
+        this.plane.position.x = this.x - scroll.current - this.extra;
+        const x = this.plane.position.x;
+        const H = this.viewport.width / 2;
+
+        if (this.bend === 0) {
+          this.plane.position.y = 0;
+          this.plane.rotation.z = 0;
+        } else {
+          const B_abs = Math.abs(this.bend);
+          const R = (H * H + B_abs * B_abs) / (2 * B_abs);
+          const effectiveX = Math.min(Math.abs(x), H);
+          const arc = R - Math.sqrt(R * R - effectiveX * effectiveX);
+          if (this.bend > 0) {
+            this.plane.position.y = -arc;
+            this.plane.rotation.z = -Math.sign(x) * Math.asin(effectiveX / R);
+          } else {
+            this.plane.position.y = arc;
+            this.plane.rotation.z = Math.sign(x) * Math.asin(effectiveX / R);
+          }
+        }
+
+        this.speed = scroll.current - scroll.last;
+        this.program.uniforms.uTime.value += 0.04;
+        this.program.uniforms.uSpeed.value = this.speed;
+
+        const planeOffset = this.plane.scale.x / 2;
+        const viewportOffset = this.viewport.width / 2;
+        this.isBefore = this.plane.position.x + planeOffset < -viewportOffset;
+        this.isAfter = this.plane.position.x - planeOffset > viewportOffset;
+        if (direction === 'right' && this.isBefore) {
+          this.extra -= this.widthTotal;
+          this.isBefore = this.isAfter = false;
+        }
+        if (direction === 'left' && this.isAfter) {
+          this.extra += this.widthTotal;
+          this.isBefore = this.isAfter = false;
+        }
+      }
+      onResize({ screen, viewport } = {}) {
+        if (screen) this.screen = screen;
+        if (viewport) {
+          this.viewport = viewport;
+          if (this.plane.program.uniforms.uViewportSizes) {
+            this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
+          }
+        }
+        this.scale = this.screen.height / 1500;
+        this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
+        this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width;
+        this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
+        this.padding = 2;
+        this.width = this.plane.scale.x + this.padding;
+        this.widthTotal = this.width * this.length;
+        this.x = this.width * this.index;
+      }
+    }
+
+    class CircularGalleryApp {
+      constructor(container, {
+        items,
+        bend = 2.6,
+        textColor = '#00D2FF',
+        borderRadius = 0.06,
+        font = 'bold 28px Outfit',
+        scrollSpeed = 1.5,
+        scrollEase = 0.04
+      } = {}) {
+        this.container = container;
+        this.scrollSpeed = scrollSpeed;
+        this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 };
+        this.isHovered = false;
+        this.isDown = false;
+        this.isLightboxOpen = false;
+
+        // "El automático de las fotos debe ser muy lento, demasiado lento"
+        this.autoPlaySpeed = 0.018;
+        this.onCheckDebounce = debounce(this.onCheck, 200);
+
+        this.createRenderer();
+        this.createCamera();
+        this.createScene();
+        this.onResize();
+        this.createGeometry();
+        this.createMedias(items, bend, textColor, borderRadius, font);
+        this.update();
+        this.addEventListeners();
+
+        // Global reference to pause on lightbox
+        window.circularGalleryInstance = this;
+      }
+      createRenderer() {
+        this.renderer = new Renderer({
+          alpha: true,
+          antialias: true,
+          dpr: Math.min(window.devicePixelRatio || 1, 2)
+        });
+        this.gl = this.renderer.gl;
+        this.gl.clearColor(0, 0, 0, 0);
+        this.container.appendChild(this.gl.canvas);
+      }
+      createCamera() {
+        this.camera = new Camera(this.gl);
+        this.camera.fov = 45;
+        this.camera.position.z = 20;
+      }
+      createScene() {
+        this.scene = new Transform();
+      }
+      createGeometry() {
+        this.planeGeometry = new Plane(this.gl, {
+          heightSegments: 50,
+          widthSegments: 100
+        });
+      }
+      createMedias(items, bend = 2.6, textColor, borderRadius, font) {
+        this.galleryItems = items;
+        this.mediasImages = items.concat(items); // duplicate for seamless loop
+        this.medias = this.mediasImages.map((data, index) => {
+          return new Media({
+            geometry: this.planeGeometry,
+            gl: this.gl,
+            image: data.image,
+            index,
+            length: this.mediasImages.length,
+            renderer: this.renderer,
+            scene: this.scene,
+            screen: this.screen,
+            text: data.text,
+            viewport: this.viewport,
+            bend,
+            textColor,
+            borderRadius,
+            font
+          });
+        });
+      }
+      onTouchDown(e) {
+        this.isDown = true;
+        this.scroll.position = this.scroll.current;
+        this.start = e.touches ? e.touches[0].clientX : e.clientX;
+        this.startY = e.touches ? e.touches[0].clientY : e.clientY;
+      }
+      onTouchMove(e) {
+        if (!this.isDown) return;
+        const x = e.touches ? e.touches[0].clientX : e.clientX;
+        const distance = (this.start - x) * (this.scrollSpeed * 0.02);
+        this.scroll.target = this.scroll.position + distance;
+      }
+      onTouchUp(e) {
+        const clientX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+        const clientY = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
+        const dist = Math.hypot(clientX - this.start, clientY - this.startY);
+
+        // "Significa que cada toque en la galería sea en la foto que es, no en la foto en turno.
+        // En donde se dé el clic, esa foto es la que debe abrir."
+        if (dist < 10) {
+          const rect = this.container.getBoundingClientRect();
+          // Convert click coordinate to WebGL NDC [-1, 1]
+          const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
+          const ndcY = -(((clientY - rect.top) / rect.height) * 2 - 1);
+          // Convert NDC to WebGL world coordinates
+          const clickWorldX = ndcX * (this.viewport.width / 2);
+          const clickWorldY = ndcY * (this.viewport.height / 2);
+
+          let bestMedia = null;
+          let minDistance = Infinity;
+
+          if (this.medias) {
+            for (const media of this.medias) {
+              const px = media.plane.position.x;
+              const py = media.plane.position.y;
+              // Bounding box hit-test in WebGL space
+              const halfW = (media.plane.scale.x / 2) * 1.15;
+              const halfH = (media.plane.scale.y / 2) * 1.25;
+
+              if (Math.abs(clickWorldX - px) <= halfW && Math.abs(clickWorldY - py) <= halfH) {
+                const d = Math.hypot(clickWorldX - px, clickWorldY - py);
+                if (d < minDistance) {
+                  minDistance = d;
+                  bestMedia = media;
+                }
+              }
+            }
+          }
+
+          if (bestMedia) {
+            openLightbox(bestMedia.image, bestMedia.text + ' — Ruta Travel');
+          } else {
+            // Fallback to whichever card is closest to the click X position
+            let closest = null;
+            let closestDist = Infinity;
+            for (const media of this.medias) {
+              const dx = Math.abs(clickWorldX - media.plane.position.x);
+              if (dx < closestDist) {
+                closestDist = dx;
+                closest = media;
+              }
+            }
+            if (closest) {
+              openLightbox(closest.image, closest.text + ' — Ruta Travel');
+            }
+          }
+        }
+
+        this.isDown = false;
+        this.onCheck();
+      }
+      onWheel(e) {
+        const delta = e.deltaY || e.wheelDelta || e.detail;
+        this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.15;
+        this.onCheckDebounce();
+      }
+      onCheck() {
+        if (!this.medias || !this.medias[0]) return;
+        const width = this.medias[0].width;
+        const itemIndex = Math.round(Math.abs(this.scroll.target) / width);
+        const item = width * itemIndex;
+        this.scroll.target = this.scroll.target < 0 ? -item : item;
+      }
+      onResize() {
+        this.screen = {
+          width: this.container.clientWidth,
+          height: this.container.clientHeight
+        };
+        this.renderer.setSize(this.screen.width, this.screen.height);
+        this.camera.perspective({
+          aspect: this.screen.width / this.screen.height
+        });
+        const fov = (this.camera.fov * Math.PI) / 180;
+        const height = 2 * Math.tan(fov / 2) * this.camera.position.z;
+        const width = height * this.camera.aspect;
+        this.viewport = { width, height };
+        if (this.medias) {
+          this.medias.forEach(media => media.onResize({ screen: this.screen, viewport: this.viewport }));
+        }
+      }
+      update() {
+        // Continuous very slow auto-rotation (0.018) from right to left
+        // Stops completely if user is dragging, hovering, or lightbox is open!
+        if (!this.isDown && !this.isHovered && !this.isLightboxOpen) {
+          this.scroll.target += this.autoPlaySpeed;
+        }
+
+        this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
+        const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
+        if (this.medias) {
+          this.medias.forEach(media => media.update(this.scroll, direction));
+        }
+        this.renderer.render({ scene: this.scene, camera: this.camera });
+        this.scroll.last = this.scroll.current;
+        this.raf = window.requestAnimationFrame(this.update.bind(this));
+      }
+      addEventListeners() {
+        this.boundOnResize = this.onResize.bind(this);
+        this.boundOnWheel = this.onWheel.bind(this);
+        this.boundOnTouchDown = this.onTouchDown.bind(this);
+        this.boundOnTouchMove = this.onTouchMove.bind(this);
+        this.boundOnTouchUp = this.onTouchUp.bind(this);
+
+        window.addEventListener('resize', this.boundOnResize);
+        this.container.addEventListener('wheel', this.boundOnWheel, { passive: true });
+        this.container.addEventListener('mousedown', this.boundOnTouchDown);
+        window.addEventListener('mousemove', this.boundOnTouchMove);
+        window.addEventListener('mouseup', this.boundOnTouchUp);
+        this.container.addEventListener('touchstart', this.boundOnTouchDown, { passive: true });
+        window.addEventListener('touchmove', this.boundOnTouchMove, { passive: true });
+        window.addEventListener('touchend', this.boundOnTouchUp);
+
+        // Pause auto-rotation on mouse enter, resume on mouse leave
+        this.container.addEventListener('mouseenter', () => { this.isHovered = true; });
+        this.container.addEventListener('mouseleave', () => { this.isHovered = false; });
+      }
+    }
+
+    // Initialize with ONLY genuine Ruta Travel High-Res Photos (NO logo in gallery)
+    window.addEventListener('DOMContentLoaded', () => {
+      const mount = document.getElementById('oglCanvasMount');
+      if (!mount) return;
+
+      const rutaPhotos = [
+        { image: 'assets/ruta_hd_01.jpg', text: 'Ruta Travel · Aventura en Ruta' },
+        { image: 'assets/ruta_hd_02.jpg', text: 'Ruta Travel · Momentos Únicos' },
+        { image: 'assets/ruta_hd_03.jpg', text: 'Ruta Travel · Pueblos Mágicos' },
+        { image: 'assets/ruta_hd_04.jpg', text: 'Ruta Travel · Viaje Familiar' },
+        { image: 'assets/ruta_hd_05.jpg', text: 'Ruta Travel · Amigos en Ruta' },
+        { image: 'assets/ruta_hd_06.jpg', text: 'Ruta Travel · Playas & Sol' },
+        { image: 'assets/ruta_hd_07.jpg', text: 'Ruta Travel · Cultura & Tradición' },
+        { image: 'assets/ruta_hd_08.jpg', text: 'Ruta Travel · Recuerdos Vivos' },
+        { image: 'assets/ruta_hd_09.jpg', text: 'Ruta Travel · Excursiones Guiadas' },
+        { image: 'assets/img_14.jpg', text: 'Ruta del Tequila · Jalisco' }
+      ];
+
+      new CircularGalleryApp(mount, {
+        items: rutaPhotos,
+        bend: 2.6,
+        textColor: '#00D2FF',
+        borderRadius: 0.05,
+        font: 'bold 28px Outfit',
+        scrollSpeed: 1.5,
+        scrollEase: 0.035
+      });
+    });
+  </script>
+</body>
+</html>
