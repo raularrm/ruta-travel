@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://ruta-travel-oficial.web.app/</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ruta-travel-oficial.web.app/assets/img_01.jpg</image:loc>
+      <image:title>Ruta Travel — Agencia de Viajes Oficial en Tenango del Valle</image:title>
+      <image:caption>Paquetes todo incluido y salidas confirmadas en autobuses Irizar</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ruta-travel-oficial.web.app/assets/teotihuacan_pyramid_hd.jpg</image:loc>
+      <image:title>Excursión Arqueológica a las Pirámides de Teotihuacán</image:title>
+    </image:image>
+  </url>
+</urlset>

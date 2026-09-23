@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Directives for AI Search Agents
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://ruta-travel-oficial.web.app/sitemap.xml
