@@ -104,34 +104,45 @@
        TOP ANNOUNCEMENT BAR (Responsive wrap on mobile)
        ========================================================================== */
     .top-bar {
-      background: linear-gradient(90deg, #D60022 0%, #FF002B 50%, #0062FF 100%);
+      background: linear-gradient(90deg, #D60022 0%, #7928CA 50%, #0062FF 100%);
       color: #fff;
       font-size: 12.5px;
       font-weight: 700;
-      padding: 8px 14px;
+      padding: 7px 16px;
       text-align: center;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.25px;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       position: relative;
       z-index: 102;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .top-bar-desktop-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .top-bar-mobile-text {
+      display: none;
     }
     .top-bar .live-dot {
-      width: 8px;
-      height: 8px;
+      width: 7.5px;
+      height: 7.5px;
       background: #00FF88;
       border-radius: 50%;
       box-shadow: 0 0 10px #00FF88;
       display: inline-block;
       animation: pulse 1.8s infinite;
+      flex-shrink: 0;
     }
     @keyframes pulse {
       0%, 100% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.4); opacity: 0.6; }
     }
+    .btn-reserve-desktop-label { display: inline; }
+    .btn-reserve-mobile-label { display: none; }
 
     /* ==========================================================================
        HEADER & NAVIGATION
@@ -1722,8 +1733,95 @@
     }
 
     @media (max-width: 768px) {
+      /* Barra superior: ultra-fina, elegante y estética con gradiente rojo, morado y azul */
+      .top-bar {
+        padding: 5px 12px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.25px;
+        background: linear-gradient(90deg, #E60026 0%, #7928CA 50%, #0052D4 100%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        gap: 6px;
+      }
+      .top-bar-desktop-text { display: none; }
+      .top-bar-mobile-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+        font-size: 10.5px;
+        letter-spacing: 0.15px;
+      }
+      .top-bar .live-dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      /* Navbar móvil: proporciones balanceadas, cero encimamiento con Ruta Travel */
+      .site-nav {
+        border-bottom: 1px solid rgba(0, 98, 255, 0.1);
+      }
+      .site-nav .container {
+        height: 62px;
+        padding-inline: 14px;
+        gap: 10px;
+      }
+      .nav-brand {
+        gap: 8px;
+        min-width: 0;
+        flex-shrink: 1;
+      }
+      .brand-logo-img {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        box-shadow: 0 2px 8px rgba(0, 98, 255, 0.15);
+      }
+      .brand-text {
+        min-width: 0;
+      }
+      .brand-title {
+        font-size: 16.5px;
+        letter-spacing: -0.4px;
+        white-space: nowrap;
+      }
+      .brand-sub {
+        display: none; /* Ocultar en móvil para dar máximo aire y elegancia al encabezado */
+      }
+
+      .nav-actions {
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .btn-nav-reserve {
+        padding: 7px 13px;
+        font-size: 12px;
+        font-weight: 800;
+        gap: 5px;
+        border-radius: var(--radius-full);
+        box-shadow: 0 4px 14px rgba(255, 0, 43, 0.28);
+      }
+      .btn-reserve-desktop-label { display: none; }
+      .btn-reserve-mobile-label { display: inline; }
+
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        background: rgba(0, 98, 255, 0.05);
+        border: 1px solid rgba(0, 98, 255, 0.12);
+        padding: 0;
+        color: var(--color-blue);
+      }
+      .menu-toggle svg {
+        width: 20px;
+        height: 20px;
+      }
+
       .nav-menu { display: none; }
-      .menu-toggle { display: block; }
       .container { padding-inline: 16px; }
       .hero { padding: 28px 0 45px; }
       .hero-title { font-size: 36px; }
@@ -1767,9 +1865,18 @@
        TOP ANNOUNCEMENT BAR
        ========================================================================== -->
   <div class="top-bar">
-    <span class="live-dot"></span>
-    <span><strong>Ruta Travel Oficial:</strong> Salidas directas desde San Pedro Zictepec, Tenango, Metepec y Toluca</span>
-    <span>⏰ Horario Lun-Vie 2:00 AM – 7:00 PM</span>
+    <div class="top-bar-desktop-text">
+      <span class="live-dot"></span>
+      <span><strong>Ruta Travel Oficial:</strong> Salidas directas desde San Pedro Zictepec, Tenango, Metepec y Toluca</span>
+      <span>·</span>
+      <span>⏰ Horario Lun-Vie 2:00 AM – 7:00 PM</span>
+    </div>
+    <div class="top-bar-mobile-text">
+      <span class="live-dot"></span>
+      <span>Tenango · Metepec · Toluca · Zictepec</span>
+      <span>·</span>
+      <span>⏰ 2:00 AM – 7:00 PM</span>
+    </div>
   </div>
 
   <!-- ==========================================================================
@@ -1799,8 +1906,10 @@
 
       <div class="nav-actions">
         <!-- Single primary CTA: Reserva tu viaje -> leads directly to #contacto form -->
-        <a href="#contacto" class="btn-nav-reserve">
-          Reserva tu viaje ✈️
+        <a href="#contacto" class="btn-nav-reserve" aria-label="Reservar viaje">
+          <span class="btn-reserve-desktop-label">Reserva tu viaje</span>
+          <span class="btn-reserve-mobile-label">Reserva</span>
+          <span>✈️</span>
         </a>
         <button class="menu-toggle" id="mobileMenuBtn" aria-label="Abrir Menú">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -3195,8 +3304,8 @@
         textColor = '#00D2FF',
         borderRadius = 0.06,
         font = 'bold 28px Outfit',
-        scrollSpeed = 1.5,
-        scrollEase = 0.04
+        scrollSpeed = 1.4,
+        scrollEase = 0.06
       } = {}) {
         this.container = container;
         this.scrollSpeed = scrollSpeed;
@@ -3205,9 +3314,15 @@
         this.isDown = false;
         this.isLightboxOpen = false;
 
-        // "El automático de las fotos debe ser muy lento, demasiado lento"
-        this.autoPlaySpeed = 0.018;
-        this.onCheckDebounce = debounce(this.onCheck, 200);
+        // "A voluntad propia, el usuario pueda correr a la velocidad que quiera las fotos
+        //  y haz que el movimiento de las fotos sea mucho más natural pero lento."
+        this.velocity = 0;          // Instantaneous pointer tracking velocity
+        this.momentum = 0;          // Inertia coasting momentum
+        this.friction = 0.952;      // Aerodynamic fluid friction
+        this.autoPlaySpeed = 0.009; // Natural, slow, relaxing ambient drift
+
+        this.lastPointerX = 0;
+        this.lastTime = 0;
 
         this.createRenderer();
         this.createCamera();
@@ -3269,86 +3384,106 @@
       }
       onTouchDown(e) {
         this.isDown = true;
+        this.momentum = 0; // Immediate grab halts any previous momentum
+        this.velocity = 0;
+        const x = e.touches ? e.touches[0].clientX : e.clientX;
+        const y = e.touches ? e.touches[0].clientY : e.clientY;
+        this.start = x;
+        this.startY = y;
+        this.lastPointerX = x;
+        this.lastTime = performance.now();
         this.scroll.position = this.scroll.current;
-        this.start = e.touches ? e.touches[0].clientX : e.clientX;
-        this.startY = e.touches ? e.touches[0].clientY : e.clientY;
       }
       onTouchMove(e) {
         if (!this.isDown) return;
         const x = e.touches ? e.touches[0].clientX : e.clientX;
+        const now = performance.now();
+        const dt = Math.max(now - this.lastTime, 8);
+        const dx = this.lastPointerX - x;
+
+        // Smooth physical displacement
         const distance = (this.start - x) * (this.scrollSpeed * 0.02);
         this.scroll.target = this.scroll.position + distance;
+
+        // Continuous velocity tracking (pixels per frame normalized)
+        const instantVelocity = (dx / dt) * 16 * (this.scrollSpeed * 0.018);
+        this.velocity = this.velocity * 0.35 + instantVelocity * 0.65;
+
+        this.lastPointerX = x;
+        this.lastTime = now;
       }
       onTouchUp(e) {
         const clientX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
         const clientY = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
         const dist = Math.hypot(clientX - this.start, clientY - this.startY);
 
-        // "Significa que cada toque en la galería sea en la foto que es, no en la foto en turno.
-        // En donde se dé el clic, esa foto es la que debe abrir."
-        if (dist < 10) {
-          const rect = this.container.getBoundingClientRect();
-          // Convert click coordinate to WebGL NDC [-1, 1]
-          const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
-          const ndcY = -(((clientY - rect.top) / rect.height) * 2 - 1);
-          // Convert NDC to WebGL world coordinates
-          const clickWorldX = ndcX * (this.viewport.width / 2);
-          const clickWorldY = ndcY * (this.viewport.height / 2);
+        this.isDown = false;
 
-          let bestMedia = null;
-          let minDistance = Infinity;
+        // Exact Photo Click Raycasting Test (dist < 8 = tap/click)
+        if (dist < 8) {
+          this.momentum = 0;
+          this.handlePhotoClick(clientX, clientY);
+          return;
+        }
 
-          if (this.medias) {
-            for (const media of this.medias) {
-              const px = media.plane.position.x;
-              const py = media.plane.position.y;
-              // Bounding box hit-test in WebGL space
-              const halfW = (media.plane.scale.x / 2) * 1.15;
-              const halfH = (media.plane.scale.y / 2) * 1.25;
+        // User flicked / swiped:
+        // Run at whatever velocity the user chose, then glide with silky physics deceleration
+        const maxMomentum = 1.4;
+        this.momentum = Math.max(Math.min(this.velocity * 1.5, maxMomentum), -maxMomentum);
+      }
+      handlePhotoClick(clientX, clientY) {
+        const rect = this.container.getBoundingClientRect();
+        // Convert click coordinate to WebGL NDC [-1, 1]
+        const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
+        const ndcY = -(((clientY - rect.top) / rect.height) * 2 - 1);
+        // Convert NDC to WebGL world coordinates
+        const clickWorldX = ndcX * (this.viewport.width / 2);
+        const clickWorldY = ndcY * (this.viewport.height / 2);
 
-              if (Math.abs(clickWorldX - px) <= halfW && Math.abs(clickWorldY - py) <= halfH) {
-                const d = Math.hypot(clickWorldX - px, clickWorldY - py);
-                if (d < minDistance) {
-                  minDistance = d;
-                  bestMedia = media;
-                }
+        let bestMedia = null;
+        let minDistance = Infinity;
+
+        if (this.medias) {
+          for (const media of this.medias) {
+            const px = media.plane.position.x;
+            const py = media.plane.position.y;
+            // Bounding box hit-test in WebGL space
+            const halfW = (media.plane.scale.x / 2) * 1.15;
+            const halfH = (media.plane.scale.y / 2) * 1.25;
+
+            if (Math.abs(clickWorldX - px) <= halfW && Math.abs(clickWorldY - py) <= halfH) {
+              const d = Math.hypot(clickWorldX - px, clickWorldY - py);
+              if (d < minDistance) {
+                minDistance = d;
+                bestMedia = media;
               }
-            }
-          }
-
-          if (bestMedia) {
-            openLightbox(bestMedia.image, bestMedia.text + ' — Ruta Travel');
-          } else {
-            // Fallback to whichever card is closest to the click X position
-            let closest = null;
-            let closestDist = Infinity;
-            for (const media of this.medias) {
-              const dx = Math.abs(clickWorldX - media.plane.position.x);
-              if (dx < closestDist) {
-                closestDist = dx;
-                closest = media;
-              }
-            }
-            if (closest) {
-              openLightbox(closest.image, closest.text + ' — Ruta Travel');
             }
           }
         }
 
-        this.isDown = false;
-        this.onCheck();
+        if (bestMedia) {
+          openLightbox(bestMedia.image, bestMedia.text + ' — Ruta Travel');
+        } else {
+          // Fallback to whichever card is closest to the click X position
+          let closest = null;
+          let closestDist = Infinity;
+          for (const media of this.medias) {
+            const dx = Math.abs(clickWorldX - media.plane.position.x);
+            if (dx < closestDist) {
+              closestDist = dx;
+              closest = media;
+            }
+          }
+          if (closest) {
+            openLightbox(closest.image, closest.text + ' — Ruta Travel');
+          }
+        }
       }
       onWheel(e) {
         const delta = e.deltaY || e.wheelDelta || e.detail;
-        this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.15;
-        this.onCheckDebounce();
-      }
-      onCheck() {
-        if (!this.medias || !this.medias[0]) return;
-        const width = this.medias[0].width;
-        const itemIndex = Math.round(Math.abs(this.scroll.target) / width);
-        const item = width * itemIndex;
-        this.scroll.target = this.scroll.target < 0 ? -item : item;
+        const wheelForce = (delta > 0 ? 1 : -1) * Math.min(Math.abs(delta) * 0.0016, 0.35);
+        this.momentum += wheelForce;
+        this.momentum = Math.max(Math.min(this.momentum, 0.8), -0.8);
       }
       onResize() {
         this.screen = {
@@ -3368,10 +3503,23 @@
         }
       }
       update() {
-        // Continuous very slow auto-rotation (0.018) from right to left
-        // Stops completely if user is dragging, hovering, or lightbox is open!
-        if (!this.isDown && !this.isHovered && !this.isLightboxOpen) {
-          this.scroll.target += this.autoPlaySpeed;
+        if (this.isLightboxOpen) {
+          // Freeze completely when lightbox is open
+          this.momentum = 0;
+        } else if (this.isDown) {
+          // Real-time tracking follows user drag
+        } else {
+          // Organic fluid inertia physics:
+          if (Math.abs(this.momentum) > 0.0006) {
+            this.scroll.target += this.momentum;
+            this.momentum *= this.friction; // Silky aerodynamic friction deceleration
+          } else {
+            this.momentum = 0;
+            // Ambient natural slow motion when idle:
+            if (!this.isHovered) {
+              this.scroll.target += this.autoPlaySpeed; // 0.009 (very slow, organic and relaxing)
+            }
+          }
         }
 
         this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
@@ -3399,7 +3547,7 @@
         window.addEventListener('touchmove', this.boundOnTouchMove, { passive: true });
         window.addEventListener('touchend', this.boundOnTouchUp);
 
-        // Pause auto-rotation on mouse enter, resume on mouse leave
+        // Pause ambient drift on mouse enter, resume on mouse leave
         this.container.addEventListener('mouseenter', () => { this.isHovered = true; });
         this.container.addEventListener('mouseleave', () => { this.isHovered = false; });
       }
@@ -3429,8 +3577,8 @@
         textColor: '#00D2FF',
         borderRadius: 0.05,
         font: 'bold 28px Outfit',
-        scrollSpeed: 1.5,
-        scrollEase: 0.035
+        scrollSpeed: 1.4,
+        scrollEase: 0.06
       });
     });
   </script>
